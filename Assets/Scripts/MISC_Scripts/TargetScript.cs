@@ -57,8 +57,9 @@ public class TargetScript : MonoBehaviour
         //sets the stun timer to stunTime if it would cause the stunned target to be stunned for longer
         //this is so you can't negate a large stun with a smaller stun
         if(stunTime > stunTimer){
-            myRb.linearVelocity = new Vector2(0, 0);
+            isStunned = true;
             stunTimer = stunTime;
+            myRb.linearVelocity = new Vector2(0, 0);
         }
         myRb.AddForce(kbDirection * kbStrength, ForceMode2D.Impulse);
         iFramesTimer = iFrameTime;
