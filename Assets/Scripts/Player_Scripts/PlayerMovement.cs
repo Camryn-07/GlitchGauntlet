@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveData;
     //the 'regular' speed
     public float baseSpeed;
+    //the speed after boosts
+    public float speedAfterBoosts;
     //the current speed
     private float speed;
     private Vector2 lastPosition;
@@ -16,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
     {
         lastPosition = transform.position;
         //making the distinction between Speed and baseSpeed for the purpose of coding speed increasing/decreasing effects later
-        speed = baseSpeed;
+        speedAfterBoosts = baseSpeed;
+        speed = speedAfterBoosts;
         moveAction = InputSystem.actions.FindAction("Move");
         myRb = GetComponent<Rigidbody2D>();
     }
@@ -24,8 +27,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+            speed = speedAfterBoosts;
         moveData = moveAction.ReadValue<Vector2>();
-        speed = baseSpeed;
+        
         //calculate angle of movement
         Vector2 moveDirection = (Vector2)transform.position - lastPosition;
         //checks if movement has happened (avoids rotation resetting when standing still)
@@ -41,6 +45,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        myRb.linearVelocity = new Vector2(moveData.x * speed, moveData.y * speed);
+        if(GetComponent<TargetScript>().isStunned == false){
+            myRb.linearVelocity = new Vector2(moveData.x * speed, moveData.y * speed);
+        }
+        
     }
 }
