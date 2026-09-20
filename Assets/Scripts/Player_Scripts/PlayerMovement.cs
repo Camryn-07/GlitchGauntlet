@@ -4,8 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D myRb;
-    private InputAction moveAction;
-    private Vector2 moveData;
+    [SerializeField] private Vector2 moveData;
     //the 'regular' speed
     public float baseSpeed;
     //the speed after boosts
@@ -20,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
         //making the distinction between Speed and baseSpeed for the purpose of coding speed increasing/decreasing effects later
         speedAfterBoosts = baseSpeed;
         speed = speedAfterBoosts;
-        moveAction = InputSystem.actions.FindAction("Move");
         myRb = GetComponent<Rigidbody2D>();
     }
 
@@ -28,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
             speed = speedAfterBoosts;
-        moveData = moveAction.ReadValue<Vector2>();
+        
         
         //calculate angle of movement
         Vector2 moveDirection = (Vector2)transform.position - lastPosition;
@@ -48,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
         if(GetComponent<TargetScript>().isStunned == false){
             myRb.linearVelocity = new Vector2(moveData.x * speed, moveData.y * speed);
         }
-        
+    }
+    void OnMove(InputValue value){
+        moveData = value.Get<Vector2>();
     }
 }
