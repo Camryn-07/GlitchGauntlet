@@ -15,6 +15,10 @@ GameObject:
   - component: {fileID: 6547990162756058191}
   - component: {fileID: 8856546754014574180}
   - component: {fileID: -2978038852878365559}
+  - component: {fileID: -930740823478235715}
+  - component: {fileID: 8687370100222686483}
+  - component: {fileID: -7384865426728419772}
+  - component: {fileID: -4216908316578560659}
   m_Layer: 0
   m_Name: The Player
   m_TagString: Untagged
@@ -123,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5440734742024257961
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -173,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   myRb: {fileID: 0}
+  moveData: {x: 0, y: 0}
   baseSpeed: 10
   speedAfterBoosts: 0
 --- !u!114 &8856546754014574180
@@ -226,6 +231,88 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-930740823478235715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924048000445898746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba50b8a407b0f044bc12e21d1b1eabe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCollector
+  dashPU: {fileID: -7384865426728419772}
+  projectilePU: {fileID: -4216908316578560659}
+--- !u!58 &8687370100222686483
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924048000445898746}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 55
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.4096
+--- !u!114 &-7384865426728419772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924048000445898746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178daf13e4713bc4c985017aa86e5105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DashPowerup
+  active: 0
+  dLevel: 0
+  PM: {fileID: 6547990162756058191}
+  dashPower: 0
+  dash1Power: 25
+  dash2Power: 50
+  dash3Power: 75
+  dashTime: 0.1
+--- !u!114 &-4216908316578560659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924048000445898746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13682acec2c740741a94c0a138ae0689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectilePowerup
 --- !u!1 &8120629774718469093
 GameObject:
   m_ObjectHideFlags: 0

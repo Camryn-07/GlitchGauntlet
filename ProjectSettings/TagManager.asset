@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Hitbox
+  - DashPowerUp
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Upgrades
   - Water
   - UI
   - 
