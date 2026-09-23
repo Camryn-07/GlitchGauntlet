@@ -9,5 +9,15 @@ public class HitboxScript : MonoBehaviour
     public float stunTimeDealt;
     public float iFrameTimeDealt;
     public float kbStrength;
+    public float hitboxUptime;
+    void Update()
+    {
+        if(hitboxUptime > 0){
+            hitboxUptime -= Time.deltaTime;
+            if(hitboxUptime < 0){
+                Destroy(gameObject);
+            }
+        }
+    }
     
 }
