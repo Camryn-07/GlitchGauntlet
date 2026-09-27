@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
     //the current speed
     private float speed;
     private Vector2 lastPosition;
+
+    public AudioClip walk;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         speedAfterBoosts = baseSpeed;
         speed = speedAfterBoosts;
         myRb = GetComponent<Rigidbody2D>();
+    }
 // Update is called once per frame
 void Update()
     {
@@ -46,6 +51,7 @@ void Update()
         }
     }
     void OnMove(InputValue value){
+        Debug.Log("OnMove");
         moveData = value.Get<Vector2>();
         AudioSource.PlayClipAtPoint(walk, transform.position);
     }
