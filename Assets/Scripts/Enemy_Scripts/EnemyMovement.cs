@@ -5,6 +5,7 @@ public class EnemyMovemnt : MonoBehaviour
 {
 
     public GameObject player;
+    public GameObject player2;
     private NavMeshAgent chaser;
     public float speed;
     void Start()
@@ -18,6 +19,7 @@ public class EnemyMovemnt : MonoBehaviour
     void Update()
     {
         chaser.SetDestination(player.transform.position);
+        chaser.SetDestination(player2.transform.position);
     }
 }
 

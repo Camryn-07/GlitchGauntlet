@@ -53,6 +53,10 @@ public class TargetScript : MonoBehaviour
     public void isHitByAttack(int damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
         if(canTakeDamage){
             healthValue -= damageValue;
+            if (healthValue == 0)
+            {
+                Destroy(gameObject);           
+            }
         }
         //sets the stun timer to stunTime if it would cause the stunned target to be stunned for longer
         //this is so you can't negate a large stun with a smaller stun

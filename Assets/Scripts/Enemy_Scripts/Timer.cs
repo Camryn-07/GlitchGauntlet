@@ -19,11 +19,13 @@ public class CountDown : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
+
+            if (countdown == 20)
+            {
+                SpawnBoss();
+            }
         }
-        if (countdown == 10)
-        {
-            SpawnBoss();
-        }
+      
         StartCoroutine(Timer());
     }
     void SpawnBoss()
