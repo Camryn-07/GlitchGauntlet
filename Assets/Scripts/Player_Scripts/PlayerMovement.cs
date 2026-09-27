@@ -20,10 +20,8 @@ public class PlayerMovement : MonoBehaviour
         speedAfterBoosts = baseSpeed;
         speed = speedAfterBoosts;
         myRb = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
+// Update is called once per frame
+void Update()
     {
             speed = speedAfterBoosts;
         
@@ -49,5 +47,6 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnMove(InputValue value){
         moveData = value.Get<Vector2>();
+        AudioSource.PlayClipAtPoint(walk, transform.position);
     }
 }

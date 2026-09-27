@@ -177,6 +177,8 @@ MonoBehaviour:
   moveData: {x: 0, y: 0}
   baseSpeed: 10
   speedAfterBoosts: 0
+  walk: {fileID: 8300000, guid: 5795840ed558ee24c8a298000685e9dd, type: 3}
+  shouldBeWalking: 0
 --- !u!114 &8856546754014574180
 MonoBehaviour:
   m_ObjectHideFlags: 0

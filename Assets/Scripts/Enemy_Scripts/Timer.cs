@@ -32,25 +32,24 @@ public class CountDown : MonoBehaviour
                 SpawnBoss();
             }
             if (countdown == 0)
-            {
-                
-                if (p1score > p2score)
-                {
-                    
+            {      
+                if (p1score> p2score)
+                {                    
                     p1Wins.SetActive(true);
                 }
-                if (p1score < p2score) 
+                else if (p1score <= p2score) 
                 {
                     p2Wins.SetActive(true);
                 }
-                if (p1score ==  p2score)
+                else
                 {
                     tie.SetActive(true);
                 }
+                
             }
+            
         }
-      
-        StartCoroutine(Timer());
+
     }
     void SpawnBoss()
     {
