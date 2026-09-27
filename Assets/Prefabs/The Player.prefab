@@ -199,6 +199,7 @@ MonoBehaviour:
   iFramesTimer: 0
   myRb: {fileID: 0}
   scorePerHit: 0
+  scoreOnDeath: 100
 --- !u!114 &-2978038852878365559
 MonoBehaviour:
   m_ObjectHideFlags: 0
