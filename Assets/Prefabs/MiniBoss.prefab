@@ -194,6 +194,8 @@ MonoBehaviour:
   stunTimer: 0
   iFramesTimer: 0
   myRb: {fileID: 0}
+  scorePerHit: 50
+  scoreOnDeath: 450
 --- !u!114 &7303766371735994667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,3 +214,4 @@ MonoBehaviour:
   iFrameTimeDealt: 0.3
   kbStrength: 10
   hitboxUptime: 10000000
+  isPlayer1: 0

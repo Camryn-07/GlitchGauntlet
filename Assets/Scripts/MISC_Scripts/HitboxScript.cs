@@ -10,6 +10,9 @@ public class HitboxScript : MonoBehaviour
     public float iFrameTimeDealt;
     public float kbStrength;
     public float hitboxUptime;
+
+    public bool isPlayer1;
+
     void Update()
     {
         if(hitboxUptime > 0){

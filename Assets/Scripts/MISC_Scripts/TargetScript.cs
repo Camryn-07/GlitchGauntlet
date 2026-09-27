@@ -9,11 +9,16 @@ public class TargetScript : MonoBehaviour
     [SerializeField] private bool canTakeDamage;
     public bool inIFrames;
     public bool isStunned;
-    [SerializeField] private int healthValue;
+    public int healthValue;
     [SerializeField] private int maxHealthValue;
     [SerializeField] private float stunTimer;
     [SerializeField] private float iFramesTimer;
     [SerializeField] private Rigidbody2D myRb;
+
+    [SerializeField]
+    private int scorePerHit = 50;
+    [SerializeField]
+    private int scoreOnDeath = 100;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,11 +55,30 @@ public class TargetScript : MonoBehaviour
         }
     }
     //handles being hit by a hitbox & the values pertaining to that
-    public void isHitByAttack(int damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
-        if(canTakeDamage){
+    public void isHitByAttack(bool isPlayer1, int damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
+        if(canTakeDamage)
+        {
+            if (isPlayer1)
+            {
+                Score.instance.ChangeP1Score(scorePerHit);
+            }
+            else
+            {
+                Score.instance.ChangeP2Score(scorePerHit);
+            }
+
             healthValue -= damageValue;
             if (healthValue == 0)
             {
+                if (isPlayer1)
+                {
+                    Score.instance.ChangeP1Score(scoreOnDeath);
+                }
+                else
+                {
+                    Score.instance.ChangeP2Score(scoreOnDeath);
+                }
+
                 Destroy(gameObject);           
             }
         }
@@ -75,7 +99,7 @@ public class TargetScript : MonoBehaviour
             HitboxScript HS = triggerObject.GetComponent<HitboxScript>();
             if(HS.hitboxTeam != targetTeam && inIFrames == false){
                 Vector2 knockbackDirection = (transform.position - triggerObject.transform.position).normalized;
-                isHitByAttack(HS.damageDealt, HS.kbStrength, knockbackDirection, HS.stunTimeDealt, HS.iFrameTimeDealt);
+                isHitByAttack(HS.isPlayer1, HS.damageDealt, HS.kbStrength, knockbackDirection, HS.stunTimeDealt, HS.iFrameTimeDealt);
             }
             
         }

@@ -1,36 +1,32 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public int score;
-    public int scoreOnHit;
+    public static Score instance;
+
+    public int scoreP1;
+    public int scoreP2;
     public GameObject Player1;
     public GameObject Player2;
     public TMP_Text P1ScoreText;
     public TMP_Text P2ScoreText;
     //public class
-    void Start()
+    void Awake()
     {
-       
-    }
+       instance = this;
+    }  
+    public void ChangeP1Score(int change)
+    {
+        scoreP1 += change;
 
-    public void P1ScoreCounter()
-    {
-       // if ()
-        //{
-          //P1ScoreText.text = "Player1:" + score;
-        //}
-        
+        P1ScoreText.text = "Player1:" + scoreP1;
     }
-    public void P2ScoreCounter()
+    public void ChangeP2Score(int change)
     {
-        P2ScoreText.text = "Player2:" + score;
-    }
+        scoreP2 += change;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        P2ScoreText.text = "Player2:" + scoreP2;
     }
 }
