@@ -723,7 +723,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364781196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04fd63e46a675134a87c105ffe1ba393, type: 3}
   m_Name: 
@@ -772,6 +772,13 @@ MonoBehaviour:
   Player2: {fileID: 1823159964}
   P1ScoreText: {fileID: 144649343}
   P2ScoreText: {fileID: 752844207}
+  countdown: 30
+  countdownText: {fileID: 1302537001}
+  Boss: {fileID: 7376751030278011151, guid: 58378ce364fa5434bbe608232b42ed7d, type: 3}
+  bossSpawn: 0
+  p1Wins: {fileID: 1204420984}
+  p2Wins: {fileID: 603642882}
+  tie: {fileID: 475188068}
 --- !u!1001 &365911974
 PrefabInstance:
   m_ObjectHideFlags: 0
