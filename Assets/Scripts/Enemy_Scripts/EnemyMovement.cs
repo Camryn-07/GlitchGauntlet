@@ -10,16 +10,16 @@ public class EnemyMovemnt : MonoBehaviour
     public float speed;
     void Start()
     {
-        chaser = GetComponent<NavMeshAgent>();
-        chaser.updateRotation = false;
-        chaser.updateUpAxis = false;
+        //chaser = GetComponent<NavMeshAgent>();
+        //chaser.updateRotation = false;
+        //chaser.updateUpAxis = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        chaser.SetDestination(player.transform.position);
-        chaser.SetDestination(player2.transform.position);
+        //chaser.SetDestination(player.transform.position);
+        //chaser.SetDestination(player2.transform.position);
     }
 }
 
