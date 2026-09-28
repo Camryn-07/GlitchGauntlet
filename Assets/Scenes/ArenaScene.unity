@@ -286,10 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Extensions.CollectSources2d
-  m_OverrideByGrid: 0
-  m_UseMeshPrefab: {fileID: 0}
-  m_CompressBounds: 0
-  m_OverrideVector: {x: 1, y: 1, z: 1}
 --- !u!4 &99175331
 Transform:
   m_ObjectHideFlags: 0
@@ -317,25 +313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshSurface
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
-  m_MinRegionArea: 0
-  m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: f6ca90f0065d1104da2d7420c263e2e2, type: 2}
 --- !u!1 &129628354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,10 +1745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!212 &763181090
 SpriteRenderer:
   serializedVersion: 2
@@ -1876,10 +1849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!212 &871317292
 SpriteRenderer:
   serializedVersion: 2
@@ -2590,10 +2559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!212 &1756911837
 SpriteRenderer:
   serializedVersion: 2
@@ -2715,6 +2680,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8856546754014574180, guid: e097c69ad5ae3d4488e1697c3ff6d2c7, type: 3}
       propertyPath: scoreOnDeath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856546754014574180, guid: e097c69ad5ae3d4488e1697c3ff6d2c7, type: 3}
+      propertyPath: canTakeDamage
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2963,10 +2932,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
-  m_OverrideArea: 1
-  m_Area: 1
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!212 &1912869542
 SpriteRenderer:
   serializedVersion: 2
@@ -3056,10 +3021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
-  m_OverrideArea: 0
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!212 &1938268280
 SpriteRenderer:
   serializedVersion: 2
@@ -3427,7 +3388,15 @@ PrefabInstance:
       value: The Player
       objectReference: {fileID: 0}
     - target: {fileID: 8856546754014574180, guid: e097c69ad5ae3d4488e1697c3ff6d2c7, type: 3}
+      propertyPath: targetTeam
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856546754014574180, guid: e097c69ad5ae3d4488e1697c3ff6d2c7, type: 3}
       propertyPath: scoreOnDeath
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856546754014574180, guid: e097c69ad5ae3d4488e1697c3ff6d2c7, type: 3}
+      propertyPath: canTakeDamage
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

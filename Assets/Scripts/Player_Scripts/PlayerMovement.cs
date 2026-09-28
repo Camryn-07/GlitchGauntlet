@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     //the current speed
     private float speed;
     private Vector2 lastPosition;
-
+    private float walkSoundTimer;
     public AudioClip walk;
 
 
@@ -29,13 +29,22 @@ public class PlayerMovement : MonoBehaviour
 void Update()
     {
             speed = speedAfterBoosts;
-        
+            if(walkSoundTimer > 0){
+                walkSoundTimer -= Time.deltaTime;
+                if(walkSoundTimer < 0){
+                walkSoundTimer = 0;
+                }
+            }
         
         //calculate angle of movement
         Vector2 moveDirection = (Vector2)transform.position - lastPosition;
-        //checks if movement has happened (avoids rotation resetting when standing still)
+        //checks if movement has happened (avoids rotation resetting when standing still) (also used for the audio clip)
         if (moveDirection.sqrMagnitude > 0.001f)
         {
+            if(walkSoundTimer == 0){
+                AudioSource.PlayClipAtPoint(walk, transform.position);
+                walkSoundTimer = 0.5f;
+            }
             //calculates angle of movement
             float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
 
@@ -53,6 +62,6 @@ void Update()
     void OnMove(InputValue value){
         Debug.Log("OnMove");
         moveData = value.Get<Vector2>();
-        AudioSource.PlayClipAtPoint(walk, transform.position);
+
     }
 }
