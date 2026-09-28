@@ -53,11 +53,8 @@ public class Score : MonoBehaviour
                 {
                     tie.SetActive(true);
                 }
-
             }
-
         }
-
     }
     void SpawnBoss()
     {
