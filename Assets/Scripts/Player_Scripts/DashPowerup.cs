@@ -8,56 +8,54 @@ public class DashPowerup : MonoBehaviour
     public int dLevel;
     public PlayerMovement PM;
     public float dashPower;
-    public float dash1Power;
-    public float dash2Power;
-    public float dash3Power;
+
+    //this is important because it lets us scale dash power forever!!
+    //so we dont need to recode the entire thing if we decide "hey we want more/less levels for our powerup"
+    public float dashPowerScaling;
+    public float dashPowerBase;
+    public int dashLevelMax;
     private InputAction dashAction;
     private Coroutine dashRoutine;
     [SerializeField] private float dashTime;
+    [SerializeField] private float dashCooldownTime;
+    private bool isDashing;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isDashing = false;
         active = false;
-        dashAction = InputSystem.actions.FindAction("Dash");
-        dashAction.performed += dashActionPerformed;
+        dashPower = dashPowerBase + (dashPowerScaling * dLevel);
     }
 
-    private void dashActionPerformed(InputAction.CallbackContext obj)
+    void OnDash()
     {
-        if (active)
+        if(active == true && isDashing == false)
         {
-            dashRoutine = StartCoroutine(dashMovement());
+            Debug.Log("OnDash");
+            dashRoutine = StartCoroutine(DashMovement());
         }
     }
 
-    private IEnumerator dashMovement()
+    private IEnumerator DashMovement()
     {
+        isDashing = true;
         //make player fast for a short time
         PM.speedAfterBoosts = PM.speedAfterBoosts + dashPower;
         yield return new WaitForSeconds(dashTime);
         PM.speedAfterBoosts = PM.baseSpeed;
+        yield return new WaitForSeconds(dashCooldownTime);
+        isDashing = false;
         StopCoroutine(dashRoutine);
     }
-    public void levelUpDash()
+    public void LevelUpDash()
     {
-        //activate ability if 
-        if (dLevel <= 0)
+        active = true;
+        dLevel += 1;
+        if(dLevel > dashLevelMax)
         {
-            active = true;
+            dLevel = dashLevelMax;
         }
-        dLevel++;
-        if (dLevel == 1)
-        {
-            dashPower = dash1Power;
-        }
-        else if (dLevel == 2)
-        {
-            dashPower = dash2Power;
-        }
-        else if (dLevel == 3)
-        {
-            dashPower = dash3Power;
-        }
+        dashPower = dashPowerBase + (dashPowerScaling * dLevel);
     }
 }
 

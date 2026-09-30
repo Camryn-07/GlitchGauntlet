@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8856546754014574180}
   - component: {fileID: -2978038852878365559}
   - component: {fileID: 1137668722091652198}
+  - component: {fileID: 7736890580820109874}
   m_Layer: 0
   m_Name: The Player
   m_TagString: Untagged
@@ -178,7 +179,7 @@ MonoBehaviour:
   baseSpeed: 10
   speedAfterBoosts: 0
   walk: {fileID: 8300000, guid: 5795840ed558ee24c8a298000685e9dd, type: 3}
-  shouldBeWalking: 0
+  isDashing: 0
 --- !u!114 &8856546754014574180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +313,27 @@ MonoBehaviour:
   attackCDTimer: 0
   attackCDStandard: 1
   isPlayer1: 1
+--- !u!114 &7736890580820109874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924048000445898746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178daf13e4713bc4c985017aa86e5105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DashPowerup
+  active: 0
+  dLevel: 0
+  PM: {fileID: 6547990162756058191}
+  dashPower: 0
+  dashPowerScaling: 4
+  dashPowerBase: 6
+  dashLevelMax: 3
+  dashTime: 0.3
+  dashCooldownTime: 1
 --- !u!1 &8120629774718469093
 GameObject:
   m_ObjectHideFlags: 0

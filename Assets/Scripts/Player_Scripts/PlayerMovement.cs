@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastPosition;
     private float walkSoundTimer;
     public AudioClip walk;
+    public bool isDashing;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-            speed = speedAfterBoosts;
+        speed = speedAfterBoosts;
             if(walkSoundTimer > 0){
                 walkSoundTimer -= Time.deltaTime;
                 if(walkSoundTimer < 0){

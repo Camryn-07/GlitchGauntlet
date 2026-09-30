@@ -10,7 +10,7 @@ public class UpgradeCollector : MonoBehaviour
         if (collision.gameObject.CompareTag("DashPowerUp"))
         {
             //add 1 to the DashPowerup's level
-            dashPU.levelUpDash();
+            dashPU.LevelUpDash();
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.CompareTag("ProjectilePowerUp"))
