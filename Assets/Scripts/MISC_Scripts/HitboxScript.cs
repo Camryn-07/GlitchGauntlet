@@ -18,7 +18,15 @@ public class HitboxScript : MonoBehaviour
         if(hitboxUptime > 0){
             hitboxUptime -= Time.deltaTime;
             if(hitboxUptime < 0){
-                Destroy(gameObject);
+                //FOR THE LOVE OF GOD DO NOT MAKE ANYTHING THE PARENT OF A HITBOX IF YOU DONT WANT THAT PARENT TO BE DELETEDDDDDDD
+                if(transform.parent.gameObject != null)
+                {
+                    Destroy(transform.parent.gameObject);
+                } else
+                {
+                    Destroy(gameObject);
+                }
+                
             }
         }
     }
