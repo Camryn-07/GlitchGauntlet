@@ -8,6 +8,7 @@ public class DashPowerup : MonoBehaviour
     public int dLevel;
     public PlayerMovement PM;
     public float dashPower;
+    //[SerializeField] private string playerDash;
 
     //this is important because it lets us scale dash power forever!!
     //so we dont need to recode the entire thing if we decide "hey we want more/less levels for our powerup"
