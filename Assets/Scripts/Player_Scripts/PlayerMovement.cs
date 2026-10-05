@@ -26,16 +26,17 @@ public class PlayerMovement : MonoBehaviour
         speed = speedAfterBoosts;
         myRb = GetComponent<Rigidbody2D>();
     }
-// Update is called once per frame
-void Update()
+    // Update is called once per frame
+    void Update()
     {
         speed = speedAfterBoosts;
-            if(walkSoundTimer > 0){
-                walkSoundTimer -= Time.deltaTime;
-                if(walkSoundTimer < 0){
+        if(walkSoundTimer > 0){
+            walkSoundTimer -= Time.deltaTime;
+            if(walkSoundTimer < 0)
+            {
                 walkSoundTimer = 0;
-                }
             }
+        }
         
         //calculate angle of movement
         Vector2 moveDirection = (Vector2)transform.position - lastPosition;
@@ -60,7 +61,8 @@ void Update()
             myRb.linearVelocity = new Vector2(moveData.x * speed, moveData.y * speed);
         }
     }
-    void OnMove(InputValue value){
+    void OnMove(InputValue value)
+    {
         Debug.Log("OnMove");
         moveData = value.Get<Vector2>();
 

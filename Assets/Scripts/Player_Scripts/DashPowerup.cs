@@ -6,56 +6,77 @@ public class DashPowerup : MonoBehaviour
 {
     public bool active;
     public int dLevel;
-    public PlayerMovement PM;
+    [SerializeField] private int dashLevelMax;
+    [SerializeField] private float dashPowerScaling;
+    [SerializeField] float startupPower;
     public float dashPower;
-
-    //this is important because it lets us scale dash power forever!!
-    //so we dont need to recode the entire thing if we decide "hey we want more/less levels for our powerup"
-    public float dashPowerScaling;
-    public float dashPowerBase;
-    public int dashLevelMax;
+    public PlayerControler PC;
     private InputAction dashAction;
+    [SerializeField] private string playerDash;
     private Coroutine dashRoutine;
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldownTime;
-    private bool isDashing;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public bool canDash;
+    
     void Start()
     {
-        isDashing = false;
+        canDash = true;
         active = false;
-        dashPower = dashPowerBase + (dashPowerScaling * dLevel);
+        dLevel = 0;
+        dashPower = 0;
+        dashAction = InputSystem.actions.FindAction(playerDash);
+        dashAction.performed += dashActionPerformed;
     }
 
-    void OnDash()
+    private void dashActionPerformed(InputAction.CallbackContext obj)
     {
-        if(active == true && isDashing == false)
+        Debug.Log("try to dash");
+        if (active == true && canDash == true)
         {
-            Debug.Log("OnDash");
-            dashRoutine = StartCoroutine(DashMovement());
+            Debug.Log("Dash start");
+            dashRoutine = StartCoroutine(dashMovement());
         }
     }
 
-    private IEnumerator DashMovement()
+    private IEnumerator dashMovement()
     {
-        isDashing = true;
-        //make player fast for a short time
-        PM.speedAfterBoosts = PM.speedAfterBoosts + dashPower;
+        canDash = false;
+        //make player super fast for a time
+        PC.moveSpeed = PC.moveSpeed + dashPower;
+        Debug.Log("am fast");
+        PC.moving();
         yield return new WaitForSeconds(dashTime);
-        PM.speedAfterBoosts = PM.baseSpeed;
+        Debug.Log(PC.moveSpeed);
+        //reset player speed
+        Debug.Log("am normal speed");
+        PC.moveSpeed = PC.baseSpeed;
+        Debug.Log(PC.moveSpeed);
+        //cooldown
+        Debug.Log("gotta wait");
         yield return new WaitForSeconds(dashCooldownTime);
-        isDashing = false;
+        Debug.Log("done waiting");
+        canDash = true;
         StopCoroutine(dashRoutine);
     }
+
     public void LevelUpDash()
     {
-        active = true;
+        //initial activation
+        if (!active)
+        {
+            active = true;
+        }
+        //progressive dash speed per level of upgrade
         dLevel += 1;
-        if(dLevel > dashLevelMax)
+        if(dLevel >= dashLevelMax)
         {
             dLevel = dashLevelMax;
         }
-        dashPower = dashPowerBase + (dashPowerScaling * dLevel);
+        dashPower = startupPower + (dashPowerScaling * dLevel);
+    }
+    private void OnDestroy()
+    {
+        dashAction.performed -= dashActionPerformed;
     }
 }
 
