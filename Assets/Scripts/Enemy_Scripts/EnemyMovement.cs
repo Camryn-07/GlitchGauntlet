@@ -13,6 +13,7 @@ public class EnemyMovemnt : MonoBehaviour
         chaser = GetComponent<NavMeshAgent>();
         chaser.updateRotation = false;
         chaser.updateUpAxis = false;
+
     }
     void Update()
     {

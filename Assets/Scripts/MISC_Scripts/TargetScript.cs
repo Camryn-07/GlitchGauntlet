@@ -6,7 +6,7 @@ public class TargetScript : MonoBehaviour
     //Works with HitboxScript
     public int targetTeam;
     //players should have canTakeDamage marked false, enemies should have it set to true.
-    [SerializeField] private bool canTakeDamage;
+    [SerializeField] public bool canTakeDamage;
     public bool inIFrames;
     public bool isStunned;
     public int healthValue;
@@ -19,6 +19,7 @@ public class TargetScript : MonoBehaviour
     private int scorePerHit = 50;
     [SerializeField]
     private int scoreOnDeath = 100;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -54,6 +55,8 @@ public class TargetScript : MonoBehaviour
             inIFrames = false;
         }
     }
+
+
     //handles being hit by a hitbox & the values pertaining to that
     public void isHitByAttack(bool isPlayer1, int damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
         if(canTakeDamage)
@@ -78,7 +81,6 @@ public class TargetScript : MonoBehaviour
                 {
                     Score.instance.ChangeP2Score(scoreOnDeath);
                 }
-
                 Destroy(gameObject);           
             }
         }

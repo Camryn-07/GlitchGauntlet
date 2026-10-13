@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicAttackScript : MonoBehaviour
@@ -11,7 +12,6 @@ public class BasicAttackScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     [SerializeField] private bool isPlayer1;
-
     // Update is called once per frame
     void Update()
     {
@@ -34,5 +34,5 @@ public class BasicAttackScript : MonoBehaviour
 
             attackCDTimer = attackCDStandard;
         }
-    }
+    } 
 }
