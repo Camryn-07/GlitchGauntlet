@@ -68,7 +68,7 @@ public class TargetScript : MonoBehaviour
             }
 
             healthValue -= damageValue;
-            if (healthValue == 0)
+            if (healthValue >= 0)
             {
                 if (isPlayer1)
                 {
