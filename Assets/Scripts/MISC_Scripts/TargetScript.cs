@@ -14,7 +14,8 @@ public class TargetScript : MonoBehaviour
     [SerializeField] private float stunTimer;
     [SerializeField] private float iFramesTimer;
     [SerializeField] private Rigidbody2D myRb;
-
+    public AudioClip attack;
+    
     [SerializeField]
     private int scorePerHit = 50;
     [SerializeField]
@@ -88,6 +89,7 @@ public class TargetScript : MonoBehaviour
         //this is so you can't negate a large stun with a smaller stun
         if(stunTime > stunTimer){
             isStunned = true;
+            AudioSource.PlayClipAtPoint(attack,transform.position);
             stunTimer = stunTime;
             myRb.linearVelocity = new Vector2(0, 0);
         }
