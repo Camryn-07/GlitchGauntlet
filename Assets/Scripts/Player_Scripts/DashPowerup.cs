@@ -31,7 +31,7 @@ public class DashPowerup : MonoBehaviour
 
     private void dashActionPerformed(InputAction.CallbackContext obj)
     {
-        Debug.Log("try to dash");
+        Debug.Log("try to dash.");
         if (active == true && canDash == true)
         {
             Debug.Log("Dash start");
