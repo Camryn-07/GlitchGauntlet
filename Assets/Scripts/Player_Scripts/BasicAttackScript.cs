@@ -1,9 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BasicAttackScript : MonoBehaviour
 {
+    [SerializeField] private string playerAttack;
+    private InputAction attack;
     //the hitbox of the basic attack
     [SerializeField] private GameObject basicAttackHitbox;
+    [SerializeField] private GameObject projectileHitbox;
     //the timer that enforces the attack cooldown
     [SerializeField] private float attackCDTimer;
     //the attack cooldown
@@ -11,8 +16,12 @@ public class BasicAttackScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     [SerializeField] private bool isPlayer1;
-
     // Update is called once per frame
+    void Start(){
+        attack = InputSystem.actions.FindAction(playerAttack);
+        attack.performed += attackPerformed;
+    }
+
     void Update()
     {
         if(attackCDTimer > 0){
@@ -22,7 +31,8 @@ public class BasicAttackScript : MonoBehaviour
             }
         }
     }
-    void OnAttack(){
+    private void attackPerformed(InputAction.CallbackContext obj)
+    {
         if(attackCDTimer <= 0){
         GameObject summonedObj = Instantiate(basicAttackHitbox, transform.position, transform.rotation);
             //sets hitbox to team of user automatically!!! im so smart and cool and awesome and goated for this
@@ -33,6 +43,17 @@ public class BasicAttackScript : MonoBehaviour
             hitBox.isPlayer1 = isPlayer1;
 
             attackCDTimer = attackCDStandard;
+            if(gameObject.GetComponent<ProjectilePowerup>().active == true){
+            GameObject summonedObjR = Instantiate(projectileHitbox, transform.position, transform.rotation);
+            HitboxScript hitBoxR = summonedObjR.GetComponentInChildren<HitboxScript>();
+            hitBoxR.hitboxTeam = gameObject.GetComponent<TargetScript>().targetTeam;
+            hitBoxR.isPlayer1 = isPlayer1;
+            hitBoxR.damageDealt = gameObject.GetComponent<ProjectilePowerup>().projPower;
+            }
         }
     }
+    //void OnAttack(){
+        
+    //} 
 }
+
