@@ -51,6 +51,6 @@ public class CampZone2D : MonoBehaviour
                 newEnemy.transform.localPosition = localPos; 
             }
         }
-        isRespawning = false;
+            isRespawning = false;
     }
 }
