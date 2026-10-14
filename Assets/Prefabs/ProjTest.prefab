@@ -232,4 +232,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d050441d596bf044a8a8042ad79f764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileStraight
-  speed: 1
+  speed: 5

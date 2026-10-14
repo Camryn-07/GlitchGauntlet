@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 1233717935975387451}
   - component: {fileID: 6137288866751084720}
   - component: {fileID: 5440734742024257961}
-  - component: {fileID: 6547990162756058191}
   - component: {fileID: 8856546754014574180}
   - component: {fileID: -2978038852878365559}
   - component: {fileID: 1137668722091652198}
   - component: {fileID: 7736890580820109874}
   - component: {fileID: 528603226708425607}
   - component: {fileID: 7170098207482489086}
+  - component: {fileID: 4631948955548517011}
   m_Layer: 0
   m_Name: The Player
   m_TagString: Untagged
@@ -164,24 +164,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &6547990162756058191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7924048000445898746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a466e18d2d45f4f8be9b478aff4934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  myRb: {fileID: 0}
-  moveData: {x: 0, y: 0}
-  baseSpeed: 10
-  speedAfterBoosts: 0
-  walk: {fileID: 8300000, guid: 5795840ed558ee24c8a298000685e9dd, type: 3}
-  isDashing: 0
 --- !u!114 &8856546754014574180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
   targetTeam: 2
-  canTakeDamage: 1
+  canTakeDamage: 0
   inIFrames: 0
   isStunned: 0
   healthValue: 0
@@ -311,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8f006fd5958844f874a459614601ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttackScript
+  playerAttack: 
   basicAttackHitbox: {fileID: 2406510482615124717, guid: cab04c570ba7b214fab1263063188788, type: 3}
   projectileHitbox: {fileID: 3493380529364962329, guid: 1f2b54ad1b27d214cbfcbebade404f02, type: 3}
   attackCDTimer: 0
@@ -334,7 +317,7 @@ MonoBehaviour:
   dashPowerScaling: 4
   startupPower: 0
   dashPower: 0
-  PC: {fileID: 0}
+  PC: {fileID: 4631948955548517011}
   playerDash: 
   dashTime: 0.3
   dashCooldownTime: 1
@@ -371,6 +354,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCollector
   dashPU: {fileID: 7736890580820109874}
   projectilePU: {fileID: 528603226708425607}
+--- !u!114 &4631948955548517011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924048000445898746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0035581d02eea0140bae59588be0a21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControler
+  playerMove: 
+  rb: {fileID: 6137288866751084720}
+  baseSpeed: 10
+  moveSpeed: 0
+  walkSoundTimer: 0
+  walk: {fileID: 8300000, guid: 5795840ed558ee24c8a298000685e9dd, type: 3}
 --- !u!1 &8120629774718469093
 GameObject:
   m_ObjectHideFlags: 0
