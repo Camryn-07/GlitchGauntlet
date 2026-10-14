@@ -6,11 +6,11 @@ public class TargetScript : MonoBehaviour
     //Works with HitboxScript
     public int targetTeam;
     //players should have canTakeDamage marked false, enemies should have it set to true.
-    [SerializeField] public bool canTakeDamage;
+    [SerializeField] private bool canTakeDamage;
     public bool inIFrames;
     public bool isStunned;
-    public float healthValue;
-    [SerializeField] private float maxHealthValue;
+    public int healthValue;
+    [SerializeField] private int maxHealthValue;
     [SerializeField] private float stunTimer;
     [SerializeField] private float iFramesTimer;
     [SerializeField] private Rigidbody2D myRb;
@@ -19,7 +19,6 @@ public class TargetScript : MonoBehaviour
     private int scorePerHit = 50;
     [SerializeField]
     private int scoreOnDeath = 100;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -55,10 +54,8 @@ public class TargetScript : MonoBehaviour
             inIFrames = false;
         }
     }
-
-
     //handles being hit by a hitbox & the values pertaining to that
-    public void isHitByAttack(bool isPlayer1, float damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
+    public void isHitByAttack(bool isPlayer1, int damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
         if(canTakeDamage)
         {
             if (isPlayer1)
@@ -81,6 +78,7 @@ public class TargetScript : MonoBehaviour
                 {
                     Score.instance.ChangeP2Score(scoreOnDeath);
                 }
+
                 Destroy(gameObject);           
             }
         }
@@ -102,15 +100,6 @@ public class TargetScript : MonoBehaviour
             if(HS.hitboxTeam != targetTeam && inIFrames == false){
                 Vector2 knockbackDirection = (transform.position - triggerObject.transform.position).normalized;
                 isHitByAttack(HS.isPlayer1, HS.damageDealt, HS.kbStrength, knockbackDirection, HS.stunTimeDealt, HS.iFrameTimeDealt);
-            }
-            if(HS.hitboxTeam != targetTeam && inIFrames == false && HS.deleteOnImpact == true){
-                if(triggerObject.transform.parent.gameObject != null)
-                {
-                    Destroy(triggerObject.transform.parent.gameObject);
-                } else
-                {
-                    Destroy(triggerObject.gameObject);
-                }
             }
             
         }

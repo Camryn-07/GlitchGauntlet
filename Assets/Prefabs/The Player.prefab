@@ -17,8 +17,6 @@ GameObject:
   - component: {fileID: -2978038852878365559}
   - component: {fileID: 1137668722091652198}
   - component: {fileID: 7736890580820109874}
-  - component: {fileID: 528603226708425607}
-  - component: {fileID: 7170098207482489086}
   m_Layer: 0
   m_Name: The Player
   m_TagString: Untagged
@@ -312,7 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttackScript
   basicAttackHitbox: {fileID: 2406510482615124717, guid: cab04c570ba7b214fab1263063188788, type: 3}
-  projectileHitbox: {fileID: 3493380529364962329, guid: 1f2b54ad1b27d214cbfcbebade404f02, type: 3}
   attackCDTimer: 0
   attackCDStandard: 1
   isPlayer1: 1
@@ -330,47 +327,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DashPowerup
   active: 0
   dLevel: 0
-  dashLevelMax: 3
-  dashPowerScaling: 4
-  startupPower: 0
+  PM: {fileID: 6547990162756058191}
   dashPower: 0
-  PC: {fileID: 0}
-  playerDash: 
+  dashPowerScaling: 4
+  dashPowerBase: 6
+  dashLevelMax: 3
   dashTime: 0.3
   dashCooldownTime: 1
-  canDash: 0
---- !u!114 &528603226708425607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7924048000445898746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13682acec2c740741a94c0a138ae0689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ProjectilePowerup
-  active: 0
-  pLevel: 0
-  projLevelMax: 4
-  projPowerMult: 0.3
-  projPowerBase: 1
-  projPower: 0
---- !u!114 &7170098207482489086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7924048000445898746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43acea5d5592b2b44867efbafa298827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCollector
-  dashPU: {fileID: 7736890580820109874}
-  projectilePU: {fileID: 528603226708425607}
 --- !u!1 &8120629774718469093
 GameObject:
   m_ObjectHideFlags: 0
