@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 74fbc7ff39a98904d8c17d0b65076c84
+guid: 78c3e01ebf5d0c344a264ab529f14ac7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9016332451071797162
-    second: GG_character_design_9_28.2-5.png_0
+      213: 7656293537249550713
+    second: Player2 Sprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 380
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GG_character_design_9_28.2-5.png_0
+      name: Player2 Sprite_0
       rect:
         serializedVersion: 2
-        x: 286
-        y: 269
-        width: 508
-        height: 542
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aa726faf792702d70800000000000000
-      internalID: 9016332451071797162
+      spriteID: 971e0e7486e904a60800000000000000
+      internalID: 7656293537249550713
       vertices: []
       indices: 
       edges: []
@@ -135,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GG_character_design_9_28.2-5.png_0: 9016332451071797162
+      Player2 Sprite_0: 7656293537249550713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
