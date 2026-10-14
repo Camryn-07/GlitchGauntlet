@@ -9,8 +9,8 @@ public class TargetScript : MonoBehaviour
     [SerializeField] public bool canTakeDamage;
     public bool inIFrames;
     public bool isStunned;
-    public int healthValue;
-    [SerializeField] private int maxHealthValue;
+    public float healthValue;
+    [SerializeField] private float maxHealthValue;
     [SerializeField] private float stunTimer;
     [SerializeField] private float iFramesTimer;
     [SerializeField] private Rigidbody2D myRb;
@@ -58,7 +58,7 @@ public class TargetScript : MonoBehaviour
 
 
     //handles being hit by a hitbox & the values pertaining to that
-    public void isHitByAttack(bool isPlayer1, int damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
+    public void isHitByAttack(bool isPlayer1, float damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
         if(canTakeDamage)
         {
             if (isPlayer1)
@@ -102,6 +102,15 @@ public class TargetScript : MonoBehaviour
             if(HS.hitboxTeam != targetTeam && inIFrames == false){
                 Vector2 knockbackDirection = (transform.position - triggerObject.transform.position).normalized;
                 isHitByAttack(HS.isPlayer1, HS.damageDealt, HS.kbStrength, knockbackDirection, HS.stunTimeDealt, HS.iFrameTimeDealt);
+            }
+            if(HS.hitboxTeam != targetTeam && inIFrames == false && HS.deleteOnImpact == true){
+                if(triggerObject.transform.parent.gameObject != null)
+                {
+                    Destroy(triggerObject.transform.parent.gameObject);
+                } else
+                {
+                    Destroy(triggerObject.gameObject);
+                }
             }
             
         }
