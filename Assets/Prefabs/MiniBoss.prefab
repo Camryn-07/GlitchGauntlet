@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7899866830133251452}
   - component: {fileID: 7065642123875843812}
   - component: {fileID: 7303766371735994667}
+  - component: {fileID: 1191029019201807358}
+  - component: {fileID: -2110219057814122727}
   m_Layer: 0
   m_Name: MiniBoss
   m_TagString: Hitbox
@@ -107,7 +109,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5000
+  m_Mass: 5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -121,7 +123,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!60 &7899866830133251452
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -190,7 +192,7 @@ MonoBehaviour:
   inIFrames: 0
   isStunned: 0
   healthValue: 0
-  maxHealthValue: 5
+  maxHealthValue: 10
   stunTimer: 0
   iFramesTimer: 0
   myRb: {fileID: 0}
@@ -214,5 +216,41 @@ MonoBehaviour:
   iFrameTimeDealt: 0.3
   kbStrength: 10
   hitboxUptime: 10000000
-  deleteOnImpact: 0
   isPlayer1: 0
+--- !u!114 &1191029019201807358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7376751030278011151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406ef37db06e15445bd61e0b2656c5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovemnt
+  player: {fileID: 0}
+  player2: {fileID: 0}
+  speed: 2
+--- !u!195 &-2110219057814122727
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7376751030278011151}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

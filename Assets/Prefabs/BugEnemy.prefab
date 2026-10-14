@@ -244,8 +244,8 @@ MonoBehaviour:
   canTakeDamage: 1
   inIFrames: 0
   isStunned: 0
-  healthValue: 2
-  maxHealthValue: 2
+  healthValue: 3
+  maxHealthValue: 3
   stunTimer: 0
   iFramesTimer: 0
   myRb: {fileID: 2938885373669875631}
