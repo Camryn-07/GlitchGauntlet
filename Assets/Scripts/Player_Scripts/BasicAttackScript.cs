@@ -4,6 +4,7 @@ public class BasicAttackScript : MonoBehaviour
 {
     //the hitbox of the basic attack
     [SerializeField] private GameObject basicAttackHitbox;
+    [SerializeField] private GameObject projectileHitbox;
     //the timer that enforces the attack cooldown
     [SerializeField] private float attackCDTimer;
     //the attack cooldown
@@ -33,6 +34,13 @@ public class BasicAttackScript : MonoBehaviour
             hitBox.isPlayer1 = isPlayer1;
 
             attackCDTimer = attackCDStandard;
+            if(gameObject.GetComponent<ProjectilePowerup>().active == true){
+            GameObject summonedObjR = Instantiate(projectileHitbox, transform.position, transform.rotation);
+            HitboxScript hitBoxR = summonedObjR.GetComponentInChildren<HitboxScript>();
+            hitBoxR.hitboxTeam = gameObject.GetComponent<TargetScript>().targetTeam;
+            hitBoxR.isPlayer1 = isPlayer1;
+            hitBoxR.damageDealt = gameObject.GetComponent<ProjectilePowerup>().projPower;
+            }
         }
     }
 }
