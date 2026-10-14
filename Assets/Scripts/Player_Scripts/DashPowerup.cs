@@ -17,6 +17,7 @@ public class DashPowerup : MonoBehaviour
     [SerializeField] private float dashTime;
     [SerializeField] private float dashCooldownTime;
     public bool canDash;
+    public AudioClip dashSound;
     
     void Start()
     {
@@ -34,6 +35,7 @@ public class DashPowerup : MonoBehaviour
         if (active == true && canDash == true)
         {
             Debug.Log("Dash start");
+            AudioSource.PlayClipAtPoint(dashSound, transform.position);
             dashRoutine = StartCoroutine(dashMovement());
         }
     }
