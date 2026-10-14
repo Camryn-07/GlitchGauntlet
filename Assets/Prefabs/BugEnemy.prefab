@@ -85,7 +85,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5715331457109223277, guid: a3317a1a5e59b444bbaa4e86a45885e2, type: 3}
   m_Color: {r: 0.8415094, g: 0.16988961, b: 0.16988961, a: 1}
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406ef37db06e15445bd61e0b2656c5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovemnt
-  player: {fileID: 0}
-  player2: {fileID: 0}
+  player: {fileID: 3565169627621239978, guid: 25b089c98853c8b419b80d0e88dc065c, type: 3}
+  player2: {fileID: 4794749620733532719, guid: a64d0ba6cbfffae4f86caad25b0848c5, type: 3}
   speed: 1
 --- !u!195 &6711608661254217547
 NavMeshAgent:
