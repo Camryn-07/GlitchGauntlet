@@ -16,7 +16,7 @@ public class UpgradeCollector : MonoBehaviour
         else if (collision.gameObject.CompareTag("ProjectilePowerUp"))
         {
             // add 1 to the Projectile Powerup's level
-            //projectilePU.levelUpProjectile();
+            projectilePU.LevelUpProjectile();
             Destroy(collision.gameObject);
         }
     }
