@@ -103,15 +103,13 @@ GameObject:
   - component: {fileID: 9084345354311803666}
   - component: {fileID: 356397023780223693}
   - component: {fileID: 2273872285585046299}
-  - component: {fileID: 4893433117207631516}
   - component: {fileID: 4035215425651403979}
   - component: {fileID: 5942396864544092498}
   - component: {fileID: 1802702059302259367}
   - component: {fileID: 2853283050472984913}
   - component: {fileID: 1293857387255874139}
-  - component: {fileID: 2715689591820178421}
-  - component: {fileID: 1461880580073244780}
   - component: {fileID: 4814831267957891411}
+  - component: {fileID: 3499729224499498091}
   - component: {fileID: 7865272804071679889}
   - component: {fileID: 3682055665488112983}
   m_Layer: 0
@@ -259,24 +257,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &4893433117207631516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100085577885896406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a466e18d2d45f4f8be9b478aff4934, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  myRb: {fileID: 0}
-  moveData: {x: 0, y: 0}
-  baseSpeed: 10
-  speedAfterBoosts: 0
-  walk: {fileID: 8300000, guid: 5795840ed558ee24c8a298000685e9dd, type: 3}
-  isDashing: 0
 --- !u!114 &4035215425651403979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8f006fd5958844f874a459614601ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttackScript
+  playerAttack: P1Attack
   basicAttackHitbox: {fileID: 2406510482615124717, guid: cab04c570ba7b214fab1263063188788, type: 3}
+  projectileHitbox: {fileID: 0}
   attackCDTimer: 0
   attackCDStandard: 1
   isPlayer1: 1
@@ -428,8 +410,8 @@ MonoBehaviour:
   dashPowerScaling: 4
   startupPower: 0
   dashPower: 0
-  PC: {fileID: 0}
-  playerDash: 
+  PC: {fileID: 3499729224499498091}
+  playerDash: P1Dash
   dashTime: 0.3
   dashCooldownTime: 1
   canDash: 0
@@ -446,68 +428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43acea5d5592b2b44867efbafa298827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCollector
-  dashPU: {fileID: 1461880580073244780}
+  dashPU: {fileID: 2853283050472984913}
   projectilePU: {fileID: 4814831267957891411}
---- !u!58 &2715689591820178421
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100085577885896406}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 55
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.4096
---- !u!114 &1461880580073244780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8100085577885896406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 178daf13e4713bc4c985017aa86e5105, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DashPowerup
-  active: 0
-  dLevel: 0
-  dashLevelMax: 3
-  dashPowerScaling: 3
-  startupPower: 0
-  dashPower: 0
-  PC: {fileID: 0}
-  playerDash: 
-  dashTime: 1
-  dashCooldownTime: 0.3
-  canDash: 0
-  dashSound: {fileID: 0}
 --- !u!114 &4814831267957891411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +442,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13682acec2c740741a94c0a138ae0689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePowerup
+  active: 0
+  pLevel: 0
+  projLevelMax: 4
+  projPowerMult: 0.3
+  projPowerBase: 1
+  projPower: 0
+--- !u!114 &3499729224499498091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100085577885896406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0035581d02eea0140bae59588be0a21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControler
+  playerMove: P1Move
+  rb: {fileID: 356397023780223693}
+  baseSpeed: 10
+  moveSpeed: 0
+  walkSoundTimer: 0
+  walk: {fileID: 8300000, guid: 5795840ed558ee24c8a298000685e9dd, type: 3}
 --- !u!81 &7865272804071679889
 AudioListener:
   m_ObjectHideFlags: 0
