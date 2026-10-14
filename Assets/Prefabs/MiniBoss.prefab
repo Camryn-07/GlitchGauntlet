@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406ef37db06e15445bd61e0b2656c5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovemnt
-  player: {fileID: 8100085577885896406, guid: 25b089c98853c8b419b80d0e88dc065c, type: 3}
-  player2: {fileID: 5041158393294493288, guid: a64d0ba6cbfffae4f86caad25b0848c5, type: 3}
+  player: {fileID: 0}
+  player2: {fileID: 0}
   speed: 2
 --- !u!195 &-2110219057814122727
 NavMeshAgent:
