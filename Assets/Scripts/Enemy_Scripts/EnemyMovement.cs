@@ -3,7 +3,6 @@ using UnityEngine.AI;
 
 public class EnemyMovemnt : MonoBehaviour
 {
-    [Header("Player Settings")]
     public GameObject player;
     public GameObject player2;
     private NavMeshAgent chaser;

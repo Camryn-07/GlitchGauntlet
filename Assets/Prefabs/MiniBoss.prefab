@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7303766371735994667}
   - component: {fileID: 1191029019201807358}
   - component: {fileID: -2110219057814122727}
+  - component: {fileID: 5544292699559504846}
   m_Layer: 0
   m_Name: MiniBoss
   m_TagString: Hitbox
@@ -187,15 +188,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85791b54a7e3ae94b8e42c84958381ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
-  targetTeam: 0
+  targetTeam: 3
   canTakeDamage: 1
   inIFrames: 0
   isStunned: 0
-  healthValue: 0
+  healthValue: 10
   maxHealthValue: 10
   stunTimer: 0
   iFramesTimer: 0
-  myRb: {fileID: 0}
+  myRb: {fileID: 1825561567024478892}
+  attack: {fileID: 0}
   scorePerHit: 50
   scoreOnDeath: 450
 --- !u!114 &7303766371735994667
@@ -216,6 +218,7 @@ MonoBehaviour:
   iFrameTimeDealt: 0.3
   kbStrength: 10
   hitboxUptime: 10000000
+  deleteOnImpact: 0
   isPlayer1: 0
 --- !u!114 &1191029019201807358
 MonoBehaviour:
@@ -254,3 +257,23 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5544292699559504846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7376751030278011151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a7126570a605140a1ed9e37c7d16de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossShooting
+  ammo: {fileID: 217118252937236647, guid: 6f2b443231623a242b8f1ece777ca69f, type: 3}
+  warningSign: {fileID: 3404616638028895903, guid: 1849647f1f0945d44966ec00731d4cf7, type: 3}
+  timeBetweenAttacks: 5
+  attackDuration: 3
+  spawnInterval: 0.2
+  telegraphTime: 0.7
+  spawnWidth: 8
+  spawnHeight: 6
