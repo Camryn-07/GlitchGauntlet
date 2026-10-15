@@ -222,6 +222,7 @@ MonoBehaviour:
   attackCDTimer: 0
   attackCDStandard: 1
   isPlayer1: 1
+  gauntlets: {fileID: 8300000, guid: bf1558c4e01eca44b9209c5a158390a7, type: 3}
 --- !u!114 &8613912045857430286
 MonoBehaviour:
   m_ObjectHideFlags: 0
