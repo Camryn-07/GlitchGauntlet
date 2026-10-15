@@ -17,6 +17,7 @@ public class BasicAttackScript : MonoBehaviour
 
     [SerializeField] private bool isPlayer1;
     // Update is called once per frame
+    public AudioClip gauntlets;
     void Start(){
         attack = InputSystem.actions.FindAction(playerAttack);
         attack.performed += attackPerformed;
@@ -41,7 +42,7 @@ public class BasicAttackScript : MonoBehaviour
             HitboxScript hitBox = summonedObj.GetComponentInChildren<HitboxScript>();
             hitBox.hitboxTeam = gameObject.GetComponent<TargetScript>().targetTeam;
             hitBox.isPlayer1 = isPlayer1;
-
+            AudioSource.PlayClipAtPoint(gauntlets, transform.position);
             attackCDTimer = attackCDStandard;
             if(gameObject.GetComponent<ProjectilePowerup>().active == true){
             GameObject summonedObjR = Instantiate(projectileHitbox, transform.position, transform.rotation);

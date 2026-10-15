@@ -85,7 +85,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -5715331457109223277, guid: a3317a1a5e59b444bbaa4e86a45885e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85791b54a7e3ae94b8e42c84958381ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
-  targetTeam: 0
+  targetTeam: 3
   canTakeDamage: 1
   inIFrames: 0
   isStunned: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
   stunTimer: 0
   iFramesTimer: 0
   myRb: {fileID: 2938885373669875631}
-  attack: {fileID: 0}
+  attack: {fileID: 8300000, guid: 46b4dc381d5b57249b7e7b3d5d079cb9, type: 3}
   scorePerHit: 0
   scoreOnDeath: 100
 --- !u!114 &1735590813975065837
