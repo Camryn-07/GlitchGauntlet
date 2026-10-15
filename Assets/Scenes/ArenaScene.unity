@@ -1197,7 +1197,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   m_Layer: 0
-  m_Name: P1_Camera
+  m_Name: P2_Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2662ea149f9738e4cac77d7bad48240c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollowScript
-  target: {fileID: 1826572446}
+  target: {fileID: 1946563577}
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &549782538
 GameObject:
@@ -1340,7 +1340,7 @@ GameObject:
   - component: {fileID: 549782539}
   - component: {fileID: 549782543}
   m_Layer: 0
-  m_Name: P2_Camera
+  m_Name: P1_Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1468,7 +1468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2662ea149f9738e4cac77d7bad48240c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollowScript
-  target: {fileID: 1946563577}
+  target: {fileID: 1826572446}
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &590552033
 GameObject:
@@ -1480,6 +1480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 590552035}
   - component: {fileID: 590552034}
+  - component: {fileID: 590552036}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1547,6 +1548,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &590552036
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590552033}
+  m_Enabled: 1
 --- !u!1 &603642882
 GameObject:
   m_ObjectHideFlags: 0
