@@ -3,12 +3,10 @@ using UnityEngine;
 
 public class CampZone2D : MonoBehaviour
 {
-    public GameObject itemToDrop;
-
+    [SerializeField] private GameObject[] upgrades;
     public GameObject enemyPrefab;
-
     public float respawnDelay = 5f;
-
+    private GameObject randomUpgrades;
     private System.Collections.Generic.List<Vector3> localSpawnPositions = new System.Collections.Generic.List<Vector3>();
     private bool isRespawning = false;
 
@@ -31,15 +29,22 @@ public class CampZone2D : MonoBehaviour
             TriggerCampCleared();
         }
     }
-
     private void TriggerCampCleared()
     {
-        if (itemToDrop != null)
+
+        if (upgrades != null && upgrades.Length > 0)
         {
-            Instantiate(itemToDrop, transform.position, Quaternion.identity);
+            int randomIndex = UnityEngine.Random.Range(0, upgrades.Length);
+            randomUpgrades = upgrades[randomIndex];
+
+            if (randomUpgrades != null)
+            {
+                Instantiate(randomUpgrades, transform.position, Quaternion.identity);
+            }
         }
         StartCoroutine(RespawnCampTimer());
     }
+  
     private IEnumerator RespawnCampTimer()
     {
         yield return new WaitForSeconds(respawnDelay);
