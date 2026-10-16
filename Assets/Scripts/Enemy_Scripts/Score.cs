@@ -18,6 +18,10 @@ public class Score : MonoBehaviour
     public GameObject p1Wins;
     public GameObject p2Wins;
     public GameObject tie;
+    public GameObject controlsP1;
+    public GameObject controlsP2;
+    public GameObject quit;
+    public GameObject resrart;
     //public class
     void Awake()
     {
@@ -35,12 +39,14 @@ public class Score : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
 
-            if (countdown == 20)
+            if (countdown == 30)
             {
                 SpawnBoss();
             }
             if (countdown == 0)
             {
+                controlsP1.SetActive(false);
+                controlsP2.SetActive(false);
                 if (scoreP1 > scoreP2)
                 {
                     p1Wins.SetActive(true);
@@ -53,6 +59,8 @@ public class Score : MonoBehaviour
                 {
                     tie.SetActive(true);
                 }
+                quit.SetActive(true);
+                resrart.SetActive(true);
             }
         }
     }

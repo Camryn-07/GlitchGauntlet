@@ -3,10 +3,10 @@ using UnityEngine.AI;
 
 public class EnemyMovemnt : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject player2;
+    public GameObject[] players;
     private NavMeshAgent chaser;
     public float speed;
+    public TagHandle Player;
 
     void Start()
     {
@@ -14,8 +14,8 @@ public class EnemyMovemnt : MonoBehaviour
         chaser.updateRotation = false;
         chaser.updateUpAxis = false;
         chaser.speed = speed;
-        if (player == null) player = GameObject.Find("The Player 1");
-        if (player2 == null) player2 = GameObject.Find("The Player 2");
+
+        players = GameObject.FindGameObjectsWithTag("Player");
     }
     void Update()
     {
@@ -28,11 +28,20 @@ public class EnemyMovemnt : MonoBehaviour
     }
     GameObject GetClosestPlayer()
     {
-        if (player != null && player2 == null) return player;
-        if (player == null && player2 != null) return player2;
-        float distanceToP1 = Vector3.Distance(transform.position, player.transform.position);
-        float distanceToP2 = Vector3.Distance(transform.position, player2.transform.position);
-        return (distanceToP1 < distanceToP2) ? player : player2;
+        GameObject player = null;
+
+        float minDistance = Mathf.Infinity;
+        foreach (GameObject p in players)
+        {
+            float distance = Vector3.Distance(transform.position, p.transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                player = p;
+            }
+        }
+
+        return player;
     }
     void FlipSprite(Vector3 targetPosition)
     {
