@@ -20,6 +20,7 @@ public class TargetScript : MonoBehaviour
     private int scorePerHit = 50;
     [SerializeField]
     private int scoreOnDeath = 100;
+    [SerializeField] private int flashTime = 500;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -95,6 +96,7 @@ public class TargetScript : MonoBehaviour
         }
         myRb.AddForce(kbDirection * kbStrength, ForceMode2D.Impulse);
         iFramesTimer = iFrameTime;
+        TempFlash();
     }
     void OnTriggerEnter2D(Collider2D triggerObject)
     {
@@ -116,5 +118,11 @@ public class TargetScript : MonoBehaviour
             }
             
         }
+    }
+    public async Task TempFlash(){
+        Color tempColorStore = gameObject.GetComponent<Renderer>().material.color;
+        gameObject.GetComponent<Renderer>().material.color = Color.black;
+        await Task.Delay(flashTime);
+        gameObject.GetComponent<Renderer>().material.color = tempColorStore;
     }
 }
