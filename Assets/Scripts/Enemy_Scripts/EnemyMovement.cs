@@ -30,7 +30,7 @@ public class EnemyMovemnt : MonoBehaviour
     {
         GameObject player = null;
 
-        float minDistance = Mathf.Infinity;
+        float minDistance = 10;
         foreach (GameObject p in players)
         {
             float distance = Vector3.Distance(transform.position, p.transform.position);
