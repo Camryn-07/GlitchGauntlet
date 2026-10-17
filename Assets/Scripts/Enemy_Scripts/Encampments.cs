@@ -53,7 +53,8 @@ public class CampZone2D : MonoBehaviour
             if (enemyPrefab != null)
             {
                 GameObject newEnemy = Instantiate(enemyPrefab, transform);
-                newEnemy.transform.localPosition = localPos; 
+                newEnemy.transform.localPosition = localPos;
+                newEnemy.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(newEnemy.transform.position);
             }
         }
             isRespawning = false;
