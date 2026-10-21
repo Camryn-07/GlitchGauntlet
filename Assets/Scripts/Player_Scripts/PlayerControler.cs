@@ -32,18 +32,24 @@ public class PlayerControler : MonoBehaviour
     }
     public void moving()
     {
+        if(GetComponent<TargetScript>().isStunned == false){
         playerMovement = moveDirection * moveSpeed;
+        }
     }
 
     private void moveCanceled(InputAction.CallbackContext obj)
     {
+        if(GetComponent<TargetScript>().isStunned == false){
         playerMovement = Vector2.zero;
+        }
     }
 
     private void Update()
     {
         //moving
+        if(GetComponent<TargetScript>().isStunned == false){
         rb.linearVelocity = playerMovement;
+        }
         //walk sfx timer
         if (walkSoundTimer > 0)
         {
