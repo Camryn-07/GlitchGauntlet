@@ -131,6 +131,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 6058502094797633497, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058502094797633497, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6058502094797633497, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8824638877564031255, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.8100773
