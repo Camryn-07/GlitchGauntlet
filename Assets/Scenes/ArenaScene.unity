@@ -1053,6 +1053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_1_Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 7975114136054503538, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: playerShoot
+      value: P1Shoot
+      objectReference: {fileID: 0}
     - target: {fileID: 8824638877564031255, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.57
@@ -1228,6 +1232,10 @@ PrefabInstance:
     - target: {fileID: 7975114136054503538, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: isPlayer1
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975114136054503538, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: playerShoot
+      value: P2Shoot
       objectReference: {fileID: 0}
     - target: {fileID: 7975114136054503538, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: playerAttack

@@ -205,6 +205,7 @@ MonoBehaviour:
   attack: {fileID: 8300000, guid: 46b4dc381d5b57249b7e7b3d5d079cb9, type: 3}
   scorePerHit: 0
   scoreOnDeath: 0
+  flashTime: 500
 --- !u!114 &7975114136054503538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,10 +219,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttackScript
   playerAttack: P1Attack
+  playerShoot: 
   basicAttackHitbox: {fileID: 2406510482615124717, guid: cab04c570ba7b214fab1263063188788, type: 3}
   projectileHitbox: {fileID: 3493380529364962329, guid: 1f2b54ad1b27d214cbfcbebade404f02, type: 3}
   attackCDTimer: 0
   attackCDStandard: 1
+  shootCDTimer: 0
+  shootCDStandard: 0.5
   isPlayer1: 1
   gauntlets: {fileID: 8300000, guid: bf1558c4e01eca44b9209c5a158390a7, type: 3}
 --- !u!114 &8613912045857430286
