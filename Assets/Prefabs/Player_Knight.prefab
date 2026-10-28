@@ -181,6 +181,7 @@ MonoBehaviour:
   moveSpeed: 0
   walkSoundTimer: 0
   walk: {fileID: 8300000, guid: 5795840ed558ee24c8a298000685e9dd, type: 3}
+  theSkin: {fileID: 5856322942557825165}
 --- !u!114 &1778285746443037331
 MonoBehaviour:
   m_ObjectHideFlags: 0
