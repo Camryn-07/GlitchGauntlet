@@ -1057,6 +1057,10 @@ PrefabInstance:
       propertyPath: playerShoot
       value: P1Shoot
       objectReference: {fileID: 0}
+    - target: {fileID: 7975114136054503538, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: projectileHitbox
+      value: 
+      objectReference: {fileID: 3493380529364962329, guid: fc300cc3695f8014c9aed668d3452f1f, type: 3}
     - target: {fileID: 8824638877564031255, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.57
@@ -1241,6 +1245,10 @@ PrefabInstance:
       propertyPath: playerAttack
       value: P2Attack
       objectReference: {fileID: 0}
+    - target: {fileID: 7975114136054503538, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: projectileHitbox
+      value: 
+      objectReference: {fileID: 3493380529364962329, guid: 206b0d3c78834e04597a6149922f290f, type: 3}
     - target: {fileID: 8824638877564031255, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.45
