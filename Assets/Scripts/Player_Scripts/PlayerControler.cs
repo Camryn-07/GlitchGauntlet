@@ -16,7 +16,7 @@ public class PlayerControler : MonoBehaviour
     private Vector2 lastPosition;
     [SerializeField] private float walkSoundTimer;
     [SerializeField] private AudioClip walk;
-    private Transform theSkin;
+    [SerializeField] private GameObject theSkin;
 
     void Start()
     {
@@ -77,10 +77,9 @@ public class PlayerControler : MonoBehaviour
 
             //rotates based on calculated angle
             transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
-            theSkin = GetComponentInChildren<Transform>();
             if(theSkin != null)
             {
-                theSkin.rotation = Quaternion.Euler(0f, 0f, 0);
+                theSkin.transform.rotation = Quaternion.Euler(0f, 0f, 0);
             }
         }
         lastPosition = transform.position;
