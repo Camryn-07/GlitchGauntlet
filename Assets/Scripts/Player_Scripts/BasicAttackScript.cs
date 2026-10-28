@@ -19,6 +19,8 @@ public class BasicAttackScript : MonoBehaviour
     [SerializeField] private float shootCDTimer;
     //the shoot cooldown
     [SerializeField] private float shootCDStandard;
+    //animation controller
+    [SerializeField] private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     [SerializeField] private bool isPlayer1;
@@ -48,8 +50,9 @@ public class BasicAttackScript : MonoBehaviour
     }
     private void attackPerformed(InputAction.CallbackContext obj)
     {
-        if(attackCDTimer <= 0){
-        GameObject summonedObj = Instantiate(basicAttackHitbox, transform.position, transform.rotation);
+        if(attackCDTimer <= 0)
+        {
+            GameObject summonedObj = Instantiate(basicAttackHitbox, transform.position, transform.rotation);
             //sets hitbox to team of user automatically!!! im so smart and cool and awesome and goated for this
             //assuming the hitbox has a HitboxScript and the object this is attached to has a TargetScript. and also that the hitbox is the child of an object (you'll see when you look at the hitbox prefab why this matters (it's because the parent is the center of the object))
             //which is, like, required anyways.
@@ -58,6 +61,8 @@ public class BasicAttackScript : MonoBehaviour
             hitBox.isPlayer1 = isPlayer1;
             AudioSource.PlayClipAtPoint(gauntlets, transform.position);
             attackCDTimer = attackCDStandard;
+            //triggers the attack animation, which resets on its own
+            animator.SetTrigger("Punching");
         }
     }
     private void shootPerformed(InputAction.CallbackContext obj)
