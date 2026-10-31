@@ -5,7 +5,9 @@ using UnityEngine.InputSystem;
 public class BasicAttackScript : MonoBehaviour
 {
     [SerializeField] private string playerAttack;
+    [SerializeField] private string playerShoot;
     private InputAction attack;
+    private InputAction shoot;
     //the hitbox of the basic attack
     [SerializeField] private GameObject basicAttackHitbox;
     [SerializeField] private GameObject projectileHitbox;
@@ -13,6 +15,10 @@ public class BasicAttackScript : MonoBehaviour
     [SerializeField] private float attackCDTimer;
     //the attack cooldown
     [SerializeField] private float attackCDStandard;
+    //the timer that enforces the shoot cooldown
+    [SerializeField] private float shootCDTimer;
+    //the shoot cooldown
+    [SerializeField] private float shootCDStandard;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public bool isPlayer1;
@@ -21,6 +27,8 @@ public class BasicAttackScript : MonoBehaviour
     void Start(){
         attack = InputSystem.actions.FindAction(playerAttack);
         attack.performed += attackPerformed;
+        shoot = InputSystem.actions.FindAction(playerShoot);
+        shoot.performed += shootPerformed;
     }
 
     void Update()
@@ -29,6 +37,12 @@ public class BasicAttackScript : MonoBehaviour
             attackCDTimer -= Time.deltaTime;
             if(attackCDTimer < 0){
                 attackCDTimer = 0;
+            }
+        }
+        if(shootCDTimer > 0){
+            shootCDTimer -= Time.deltaTime;
+            if(shootCDTimer < 0){
+                shootCDTimer = 0;
             }
         }
     }
@@ -44,12 +58,18 @@ public class BasicAttackScript : MonoBehaviour
             hitBox.isPlayer1 = isPlayer1;
             AudioSource.PlayClipAtPoint(gauntlets, transform.position);
             attackCDTimer = attackCDStandard;
+        }
+    }
+    private void shootPerformed(InputAction.CallbackContext obj)
+    {
+        if(shootCDTimer <= 0){
             if(gameObject.GetComponent<ProjectilePowerup>().active == true){
             GameObject summonedObjR = Instantiate(projectileHitbox, transform.position, transform.rotation);
             HitboxScript hitBoxR = summonedObjR.GetComponentInChildren<HitboxScript>();
             hitBoxR.hitboxTeam = gameObject.GetComponent<TargetScript>().targetTeam;
             hitBoxR.isPlayer1 = isPlayer1;
             hitBoxR.damageDealt = gameObject.GetComponent<ProjectilePowerup>().projPower;
+            shootCDTimer = shootCDStandard;
             }
         }
     }

@@ -16,6 +16,7 @@ public class PlayerControler : MonoBehaviour
     private Vector2 lastPosition;
     [SerializeField] private float walkSoundTimer;
     [SerializeField] private AudioClip walk;
+    [SerializeField] private GameObject theSkin;
 
     void Start()
     {
@@ -32,18 +33,24 @@ public class PlayerControler : MonoBehaviour
     }
     public void moving()
     {
+        if(GetComponent<TargetScript>().isStunned == false){
         playerMovement = moveDirection * moveSpeed;
+        }
     }
 
     private void moveCanceled(InputAction.CallbackContext obj)
     {
+        if(GetComponent<TargetScript>().isStunned == false){
         playerMovement = Vector2.zero;
+        }
     }
 
     private void Update()
     {
         //moving
+        if(GetComponent<TargetScript>().isStunned == false){
         rb.linearVelocity = playerMovement;
+        }
         //walk sfx timer
         if (walkSoundTimer > 0)
         {
@@ -70,6 +77,10 @@ public class PlayerControler : MonoBehaviour
 
             //rotates based on calculated angle
             transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward);
+            if(theSkin != null)
+            {
+                theSkin.transform.rotation = Quaternion.Euler(0f, 0f, 0);
+            }
         }
         lastPosition = transform.position;
     }

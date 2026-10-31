@@ -1,0 +1,529 @@
+fileFormatVersion: 2
+guid: da9f598c834080e43885751a7f98a15d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7366718095491080465
+    second: CaterpillarAttack_0
+  - first:
+      213: -6629308247350400766
+    second: CaterpillarAttack_1
+  - first:
+      213: -3256419973926298848
+    second: CaterpillarAttack_2
+  - first:
+      213: -7128048192561854622
+    second: CaterpillarAttack_3
+  - first:
+      213: -3184449283821549105
+    second: CaterpillarAttack_4
+  - first:
+      213: -6332588664641561072
+    second: CaterpillarAttack_5
+  - first:
+      213: 7864360696639368261
+    second: CaterpillarAttack_6
+  - first:
+      213: -6275144394602904911
+    second: CaterpillarAttack_7
+  - first:
+      213: 310607167178383089
+    second: CaterpillarAttack_8
+  - first:
+      213: -4264768122993257405
+    second: CaterpillarAttack_9
+  - first:
+      213: -4041374546847706328
+    second: CaterpillarAttack_10
+  - first:
+      213: -408481694360245625
+    second: CaterpillarAttack_11
+  - first:
+      213: -1044703195581851503
+    second: CaterpillarAttack_12
+  - first:
+      213: 178252588146341385
+    second: CaterpillarAttack_13
+  - first:
+      213: 3477146299962303122
+    second: CaterpillarAttack_14
+  - first:
+      213: 3210357179177334460
+    second: CaterpillarAttack_15
+  - first:
+      213: 7606487487167834831
+    second: CaterpillarAttack_16
+  - first:
+      213: -3765782079948739499
+    second: CaterpillarAttack_17
+  - first:
+      213: 7557343697109931280
+    second: CaterpillarAttack_18
+  - first:
+      213: 9089281907298869682
+    second: CaterpillarAttack_19
+  - first:
+      213: -4549779535604266069
+    second: CaterpillarAttack_20
+  - first:
+      213: 2715324963852661819
+    second: CaterpillarAttack_21
+  - first:
+      213: 7988486518587722332
+    second: CaterpillarAttack_22
+  - first:
+      213: 6867414636525464840
+    second: CaterpillarAttack_23
+  - first:
+      213: 2876860173729947490
+    second: CaterpillarAttack_24
+  - first:
+      213: 5086230990661894495
+    second: CaterpillarAttack_25
+  - first:
+      213: 2141603302460610812
+    second: CaterpillarAttack_26
+  - first:
+      213: -5835852274973474763
+    second: CaterpillarAttack_27
+  - first:
+      213: 1097760052824877894
+    second: CaterpillarAttack_28
+  - first:
+      213: -6714693010329167176
+    second: CaterpillarAttack_29
+  - first:
+      213: -8070566739729597888
+    second: CaterpillarAttack_30
+  - first:
+      213: -3205732173770418447
+    second: CaterpillarAttack_31
+  - first:
+      213: -8880151200614075465
+    second: CaterpillarAttack_32
+  - first:
+      213: 1975927234606916496
+    second: CaterpillarAttack_33
+  - first:
+      213: 8016900666044295403
+    second: CaterpillarAttack_34
+  - first:
+      213: -4651441438341235022
+    second: CaterpillarAttack_35
+  - first:
+      213: -1012352956815654485
+    second: CaterpillarAttack_36
+  - first:
+      213: -5114057797174589637
+    second: CaterpillarAttack_37
+  - first:
+      213: -6170358212662898379
+    second: CaterpillarAttack_38
+  - first:
+      213: 5324718867631885707
+    second: CaterpillarAttack_39
+  - first:
+      213: -1568997457243039443
+    second: CaterpillarAttack_40
+  - first:
+      213: -8797657026959828522
+    second: CaterpillarAttack_41
+  - first:
+      213: -6908062634595989367
+    second: CaterpillarAttack_42
+  - first:
+      213: -5807603315112877780
+    second: CaterpillarAttack_43
+  - first:
+      213: 7534616041021731590
+    second: CaterpillarAttack_44
+  - first:
+      213: -5560763082013939162
+    second: CaterpillarAttack_45
+  - first:
+      213: -851988778417618146
+    second: CaterpillarAttack_46
+  - first:
+      213: 4800742696027055636
+    second: CaterpillarAttack_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 175
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CaterpillarAttack_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2085
+        width: 419
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111203ac317db3660800000000000000
+      internalID: 7366718095491080465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_5
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 2087
+        width: 422
+        height: 386
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01edf5739202e18a0800000000000000
+      internalID: -6332588664641561072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_10
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 2087
+        width: 433
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82356d203472ae7c0800000000000000
+      internalID: -4041374546847706328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 1428
+        width: 457
+        height: 360
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb67df268da7d8c20800000000000000
+      internalID: 3210357179177334460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_20
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1428
+        width: 468
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bab47fd3e9febd0c0800000000000000
+      internalID: -4549779535604266069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_24
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 1427
+        width: 466
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f54a3f519ace720800000000000000
+      internalID: 2876860173729947490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_29
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 767
+        width: 457
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ba1887784e90d2a0800000000000000
+      internalID: -6714693010329167176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_34
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 767
+        width: 432
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8a92f2ea0c14f60800000000000000
+      internalID: 8016900666044295403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_39
+      rect:
+        serializedVersion: 2
+        x: 1968
+        y: 767
+        width: 420
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8dc40a399335e940800000000000000
+      internalID: 5324718867631885707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarAttack_44
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 107
+        width: 420
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6037f048e55509860800000000000000
+      internalID: 7534616041021731590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1e652c81513c5b74991772f06be078aa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      CaterpillarAttack_0: 7366718095491080465
+      CaterpillarAttack_1: -6629308247350400766
+      CaterpillarAttack_10: -4041374546847706328
+      CaterpillarAttack_11: -408481694360245625
+      CaterpillarAttack_12: -1044703195581851503
+      CaterpillarAttack_13: 178252588146341385
+      CaterpillarAttack_14: 3477146299962303122
+      CaterpillarAttack_15: 3210357179177334460
+      CaterpillarAttack_16: 7606487487167834831
+      CaterpillarAttack_17: -3765782079948739499
+      CaterpillarAttack_18: 7557343697109931280
+      CaterpillarAttack_19: 9089281907298869682
+      CaterpillarAttack_2: -3256419973926298848
+      CaterpillarAttack_20: -4549779535604266069
+      CaterpillarAttack_21: 2715324963852661819
+      CaterpillarAttack_22: 7988486518587722332
+      CaterpillarAttack_23: 6867414636525464840
+      CaterpillarAttack_24: 2876860173729947490
+      CaterpillarAttack_25: 5086230990661894495
+      CaterpillarAttack_26: 2141603302460610812
+      CaterpillarAttack_27: -5835852274973474763
+      CaterpillarAttack_28: 1097760052824877894
+      CaterpillarAttack_29: -6714693010329167176
+      CaterpillarAttack_3: -7128048192561854622
+      CaterpillarAttack_30: -8070566739729597888
+      CaterpillarAttack_31: -3205732173770418447
+      CaterpillarAttack_32: -8880151200614075465
+      CaterpillarAttack_33: 1975927234606916496
+      CaterpillarAttack_34: 8016900666044295403
+      CaterpillarAttack_35: -4651441438341235022
+      CaterpillarAttack_36: -1012352956815654485
+      CaterpillarAttack_37: -5114057797174589637
+      CaterpillarAttack_38: -6170358212662898379
+      CaterpillarAttack_39: 5324718867631885707
+      CaterpillarAttack_4: -3184449283821549105
+      CaterpillarAttack_40: -1568997457243039443
+      CaterpillarAttack_41: -8797657026959828522
+      CaterpillarAttack_42: -6908062634595989367
+      CaterpillarAttack_43: -5807603315112877780
+      CaterpillarAttack_44: 7534616041021731590
+      CaterpillarAttack_45: -5560763082013939162
+      CaterpillarAttack_46: -851988778417618146
+      CaterpillarAttack_47: 4800742696027055636
+      CaterpillarAttack_5: -6332588664641561072
+      CaterpillarAttack_6: 7864360696639368261
+      CaterpillarAttack_7: -6275144394602904911
+      CaterpillarAttack_8: 310607167178383089
+      CaterpillarAttack_9: -4264768122993257405
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
