@@ -20,6 +20,8 @@ public class TargetScript : MonoBehaviour
     private int scorePerHit = 50;
     [SerializeField]
     private int scoreOnDeath = 100;
+    [SerializeField]
+    private int scoreLost = 100;
     [SerializeField] private int flashTime = 500;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -60,7 +62,8 @@ public class TargetScript : MonoBehaviour
 
 
     //handles being hit by a hitbox & the values pertaining to that
-    public void isHitByAttack(bool isPlayer1, float damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime){
+    public void isHitByAttack(bool isPlayer1, float damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime)
+    {
         if(canTakeDamage)
         {
             if (isPlayer1)
@@ -86,6 +89,7 @@ public class TargetScript : MonoBehaviour
                 Destroy(gameObject);           
             }
         }
+         
         //sets the stun timer to stunTime if it would cause the stunned target to be stunned for longer
         //this is so you can't negate a large stun with a smaller stun
         if(stunTime > stunTimer){
@@ -97,6 +101,28 @@ public class TargetScript : MonoBehaviour
         myRb.AddForce(kbDirection * kbStrength, ForceMode2D.Impulse);
         iFramesTimer = iFrameTime;
         TempFlash();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        Debug.LogWarning("Hit sometin");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Hit player");
+            if (collision.gameObject.TryGetComponent<BasicAttackScript>(out BasicAttackScript attackScript))
+            {
+                Debug.Log("Hit player with HitboxScript: " + attackScript.isPlayer1);
+
+                if (attackScript.isPlayer1)
+                {
+                    Score.instance.ChangeP1Score(scoreLost);
+                }
+                else
+                {
+                    Score.instance.ChangeP2Score(scoreLost);
+                }
+            }
+        }
     }
     void OnTriggerEnter2D(Collider2D triggerObject)
     {

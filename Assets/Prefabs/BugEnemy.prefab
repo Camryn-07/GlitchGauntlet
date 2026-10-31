@@ -253,6 +253,8 @@ MonoBehaviour:
   attack: {fileID: 8300000, guid: 46b4dc381d5b57249b7e7b3d5d079cb9, type: 3}
   scorePerHit: 0
   scoreOnDeath: 100
+  scoreLost: -25
+  flashTime: 500
 --- !u!114 &1735590813975065837
 MonoBehaviour:
   m_ObjectHideFlags: 0
