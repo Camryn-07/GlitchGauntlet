@@ -12,6 +12,7 @@ public class PlayerControler : MonoBehaviour
     private Vector2 moveDirection;
     public float baseSpeed;
     public float moveSpeed;
+    [SerializeField] private Animator animator;
 
     private Vector2 lastPosition;
     [SerializeField] private float walkSoundTimer;
@@ -33,9 +34,12 @@ public class PlayerControler : MonoBehaviour
     }
     public void moving()
     {
-        if(GetComponent<TargetScript>().isStunned == false){
-        playerMovement = moveDirection * moveSpeed;
+        if(GetComponent<TargetScript>().isStunned == false)
+        {
+            playerMovement = moveDirection * moveSpeed;
         }
+        animator.SetFloat("Vertical", moveDirection.y);
+        animator.SetFloat("Horizontal", moveDirection.x);
     }
 
     private void moveCanceled(InputAction.CallbackContext obj)
