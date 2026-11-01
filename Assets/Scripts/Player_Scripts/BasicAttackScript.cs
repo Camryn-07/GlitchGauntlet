@@ -23,7 +23,7 @@ public class BasicAttackScript : MonoBehaviour
     [SerializeField] private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    [SerializeField] private bool isPlayer1;
+    public bool isPlayer1;
     // Update is called once per frame
     public AudioClip gauntlets;
     void Start(){

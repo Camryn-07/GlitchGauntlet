@@ -8,8 +8,8 @@ public class PlayerControler : MonoBehaviour
     //[SerializeField] private string playerShoot;
     private InputAction move;
     [SerializeField] private Rigidbody2D rb;
-    private Vector2 playerMovement;
-    private Vector2 moveDirection;
+    public Vector2 playerMovement;
+    public Vector2 moveDirection;
     public float baseSpeed;
     public float moveSpeed;
     [SerializeField] private Animator animator;

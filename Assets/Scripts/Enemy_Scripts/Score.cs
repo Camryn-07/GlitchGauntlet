@@ -22,6 +22,7 @@ public class Score : MonoBehaviour
     public GameObject controlsP2;
     public GameObject quit;
     public GameObject resrart;
+
     //public class
     void Awake()
     {
@@ -76,13 +77,13 @@ public class Score : MonoBehaviour
     public void ChangeP1Score(int change)
     {
         scoreP1 += change;
-
+        scoreP1 = Mathf.Clamp(scoreP1 + change, 0, 99999999);
         P1ScoreText.text = "Player1:" + scoreP1;
     }
     public void ChangeP2Score(int change)
     {
         scoreP2 += change;
-
+        scoreP2 = Mathf.Clamp(scoreP2 + change, 0, 99999999);
         P2ScoreText.text = "Player2:" + scoreP2;
     }
 }

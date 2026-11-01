@@ -200,6 +200,8 @@ MonoBehaviour:
   attack: {fileID: 0}
   scorePerHit: 50
   scoreOnDeath: 450
+  scoreLost: -25
+  flashTime: 500
 --- !u!114 &7303766371735994667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,8 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406ef37db06e15445bd61e0b2656c5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovemnt
-  player: {fileID: 0}
-  player2: {fileID: 0}
+  players: []
   speed: 2
 --- !u!195 &-2110219057814122727
 NavMeshAgent:
