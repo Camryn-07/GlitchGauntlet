@@ -21,6 +21,9 @@ public class PlayerControler : MonoBehaviour
 
     void Start()
     {
+        if(ControlSchemeUsed.controlSchemeToUse == 1){
+            playerMove = playerMove + "PC";
+        }
         move = InputSystem.actions.FindAction(playerMove);
         move.performed += movePerformed;
         move.canceled += moveCanceled;

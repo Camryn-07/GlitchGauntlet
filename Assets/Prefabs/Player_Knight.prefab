@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 541472500395528404}
   - component: {fileID: 7531824590205836986}
   - component: {fileID: 1674900626353399552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -635,7 +635,7 @@ MonoBehaviour:
   rb: {fileID: 1025511736187254596}
   playerMovement: {x: 0, y: 0}
   moveDirection: {x: 0, y: 0}
-  baseSpeed: 10
+  baseSpeed: 7.5
   moveSpeed: 0
   animator: {fileID: 1674900626353399552}
   walkSoundTimer: 0

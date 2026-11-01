@@ -23,6 +23,9 @@ public class DashPowerup : MonoBehaviour
     private TrailRenderer[] dashTrails;
     void Start()
     {
+        if(ControlSchemeUsed.controlSchemeToUse == 1){
+            playerDash = playerDash + "PC";
+        }
         canDash = true;
         active = false;
         dLevel = 0;
