@@ -100,6 +100,7 @@ public class TargetScript : MonoBehaviour
         }
         myRb.AddForce(kbDirection * kbStrength, ForceMode2D.Impulse);
         iFramesTimer = iFrameTime;
+        Debug.Log(gameObject.name+ "  Knockback: "+myRb.linearVelocity.magnitude);
         TempFlash();
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -111,6 +112,7 @@ public class TargetScript : MonoBehaviour
             Debug.Log("Hit player");
             if (collision.gameObject.TryGetComponent<BasicAttackScript>(out BasicAttackScript attackScript))
             {
+            
                 Debug.Log("Hit player with HitboxScript: " + attackScript.isPlayer1);
 
                 if (attackScript.isPlayer1)
@@ -123,17 +125,33 @@ public class TargetScript : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            HitboxScript HS = collision.gameObject.GetComponent<HitboxScript>();
+            if (HS != null && HS.hitboxTeam != targetTeam && inIFrames == false)
+            {
+                Debug.Log("Call knockback");
+                Vector2 knockbackDirection = (transform.position - collision.gameObject.transform.position).normalized;
+                isHitByAttack(HS.isPlayer1, HS.damageDealt, HS.kbStrength, knockbackDirection, HS.stunTimeDealt, HS.iFrameTimeDealt);
+            }
+        }
     }
     void OnTriggerEnter2D(Collider2D triggerObject)
     {
         if (triggerObject.gameObject.CompareTag("Hitbox"))
         {
+            Debug.Log("targetscript hit by hitbox");
+            if (TryGetComponent<EnemyMovemnt>(out EnemyMovemnt enemyMovement))
+            {
+                enemyMovement.StartCoroutine(enemyMovement.DisableAgentRoutine());        
+            }
             HitboxScript HS = triggerObject.GetComponent<HitboxScript>();
             if(HS.hitboxTeam != targetTeam && inIFrames == false){
+                Debug.Log("Call knockback");
                 Vector2 knockbackDirection = (transform.position - triggerObject.transform.position).normalized;
                 isHitByAttack(HS.isPlayer1, HS.damageDealt, HS.kbStrength, knockbackDirection, HS.stunTimeDealt, HS.iFrameTimeDealt);
             }
-            if(HS.hitboxTeam != targetTeam && inIFrames == false && HS.deleteOnImpact == true){
+            if (HS.hitboxTeam != targetTeam && inIFrames == false && HS.deleteOnImpact == true){
                 if(triggerObject.transform.parent.gameObject != null)
                 {
                     Destroy(triggerObject.transform.parent.gameObject);
