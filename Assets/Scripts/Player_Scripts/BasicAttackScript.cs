@@ -27,6 +27,10 @@ public class BasicAttackScript : MonoBehaviour
     // Update is called once per frame
     public AudioClip gauntlets;
     void Start(){
+        if(ControlSchemeUsed.controlSchemeToUse == 1){
+            playerAttack = playerAttack + "PC";
+            playerShoot = playerShoot + "PC";
+        }
         attack = InputSystem.actions.FindAction(playerAttack);
         attack.performed += attackPerformed;
         shoot = InputSystem.actions.FindAction(playerShoot);
