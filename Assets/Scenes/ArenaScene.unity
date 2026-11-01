@@ -8170,6 +8170,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
+--- !u!114 &7234561452457904812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4440434159172036037, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
+  m_PrefabInstance: {fileID: 7234561452457904811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &7234561452457904813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 861397775420595896, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
+  m_PrefabInstance: {fileID: 7234561452457904811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &7873441622839543687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8339,8 +8361,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8396735098349282451, guid: 0e3fd389dd098d44cad80af7b4311ca6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8478357259266499980}
   m_SourcePrefab: {fileID: 100100000, guid: 0e3fd389dd098d44cad80af7b4311ca6, type: 3}
+--- !u!1 &8478357259266499979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8396735098349282451, guid: 0e3fd389dd098d44cad80af7b4311ca6, type: 3}
+  m_PrefabInstance: {fileID: 8478357259266499978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8478357259266499980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8478357259266499979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157990268b337c1479a1997f8e0e301b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlTextChanger
+  p1ControlText: {fileID: 7234561452457904813}
+  p2ControlText: {fileID: 7234561452457904812}
+  p1ControlTextKeyboard: =Player 1= \nMove - WASD \nAttack - Shift \nDash - Q \nShoot
+    - Space
+  p2ControlTextKeyboard: =Player 2= \nMove - Arrow Keys \nAttack - G \nDash - H \nShoot
+    - J
 --- !u!1001 &9200284636613322262
 PrefabInstance:
   m_ObjectHideFlags: 0
