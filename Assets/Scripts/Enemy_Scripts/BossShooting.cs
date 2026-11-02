@@ -1,21 +1,42 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class EnemyRainAttack2D : MonoBehaviour
+public class EnemyTilemapRainAttack2D : MonoBehaviour
 {
+    public TargetScript TC;
+    [Header("Attack Prefabs")]
     public GameObject ammo;
     public GameObject warningSign;
+
+    [Header("Timing Settings")]
     public float timeBetweenAttacks = 5f;
     public float attackDuration = 3f;
     public float spawnInterval = 0.3f;
     public float telegraphTime = 0.5f;
-    public float spawnWidth = 6f;
-    public float spawnHeight = 7f;
 
-    private void Start()
+    [Header("Tilemap Attack Zone")]
+    public float attackRadius = 5f;
+    public float fallHeight = 6f;
+    public float scanHeightOffset = 3f;
+
+    public float castRadius = 0.3f;
+    public LayerMask tilemapLayer;
+
+    private void OnEnable()
     {
-        StartCoroutine(InfiniteAttackLoop());
+        TargetScript.startBossShooting += BossAttack;
+        
     }
+
+    private void BossAttack()
+    {
+        if (TC.healthValue <= 6)
+        {
+            Debug.Log("startit");
+            StartCoroutine(InfiniteAttackLoop());
+        }
+    }
+
     private IEnumerator InfiniteAttackLoop()
     {
         while (true)
@@ -24,36 +45,54 @@ public class EnemyRainAttack2D : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenAttacks);
         }
     }
+
     private IEnumerator SpawnObjectsRoutine()
     {
         float timer = 0f;
 
         while (timer < attackDuration)
         {
-            float randomX = Random.Range(-spawnWidth / 2f, spawnWidth / 2f);
-            Vector3 spawnPosition = new Vector3(
-                transform.position.x + randomX,
-                transform.position.y + spawnHeight,
+            float randomXOffset = Random.Range(-attackRadius, attackRadius);
+
+            Vector3 scanOrigin = new Vector3(
+                transform.position.x + randomXOffset,
+                transform.position.y + scanHeightOffset,
                 0f
             );
 
-            StartCoroutine(TelegraphAndDrop(spawnPosition));
+            RaycastHit2D tilemapHit = Physics2D.CircleCast(scanOrigin, castRadius, Vector2.down, 25f, tilemapLayer);
+
+            if (tilemapHit.collider != null)
+            {
+                Vector3 floorPosition = tilemapHit.point;
+                Vector3 highSpawnPosition = floorPosition + new Vector3(0f, fallHeight, 0f);
+
+                StartCoroutine(TelegraphAndDrop(floorPosition, highSpawnPosition));
+            }
 
             yield return new WaitForSeconds(spawnInterval);
             timer += spawnInterval;
         }
     }
-
-    private IEnumerator TelegraphAndDrop(Vector3 spawnPos)
+    private IEnumerator TelegraphAndDrop(Vector3 groundPos, Vector3 spawnPos)
     {
-        RaycastHit2D hit = Physics2D.Raycast(spawnPos, Vector2.down, spawnHeight * 2f);
+        GameObject warning = Instantiate(warningSign, groundPos, Quaternion.identity);
+        yield return new WaitForSeconds(1f);
+        Destroy(warning);
+        Instantiate(ammo, groundPos, Quaternion.identity);
+    }
 
-        if (hit.collider != null)
-        {
-            GameObject warning = Instantiate(warningSign, hit.point, Quaternion.identity);
-            Destroy(warning, telegraphTime);
-        }
-        yield return new WaitForSeconds(telegraphTime);
-        Instantiate(ammo, spawnPos, Quaternion.identity);
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Vector3 leftBound = transform.position + Vector3.left * attackRadius;
+        Vector3 rightBound = transform.position + Vector3.right * attackRadius;
+
+        // Draw horizontal line representing the zone
+        Gizmos.DrawLine(leftBound, rightBound);
+
+        // Draw search boundary limits
+        Gizmos.DrawWireSphere(leftBound, castRadius);
+        Gizmos.DrawWireSphere(rightBound, castRadius);
     }
 }

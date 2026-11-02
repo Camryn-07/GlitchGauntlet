@@ -40,7 +40,7 @@ public class Score : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
 
-            if (countdown == 30)
+            if (countdown == 50)
             {
                 SpawnBoss();
             }
