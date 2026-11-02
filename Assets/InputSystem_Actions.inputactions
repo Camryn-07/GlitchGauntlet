@@ -17,9 +17,29 @@
                     "priority": 0
                 },
                 {
+                    "name": "P1MovePC",
+                    "type": "Value",
+                    "id": "d31533f1-e056-4326-834e-8b1e288a345d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
                     "name": "P2Move",
                     "type": "Value",
                     "id": "67fc0513-4012-4e6a-8f95-38a6b2148b33",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                },
+                {
+                    "name": "P2MovePC",
+                    "type": "Value",
+                    "id": "362f153a-35bd-494e-a41f-9513dc152b07",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -37,9 +57,29 @@
                     "priority": 0
                 },
                 {
+                    "name": "P1AttackPC",
+                    "type": "Button",
+                    "id": "ae82bbcf-6c2c-4c04-b773-a1a7ca044d7e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
                     "name": "P2Attack",
                     "type": "Button",
                     "id": "2a3a05df-4103-498b-8583-a5efbb72e964",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "P2AttackPC",
+                    "type": "Button",
+                    "id": "5746acc0-5898-41c5-b7eb-f69a652f1724",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -57,9 +97,29 @@
                     "priority": 0
                 },
                 {
+                    "name": "P1DashPC",
+                    "type": "Button",
+                    "id": "279c0840-e94c-4919-b61e-fa530cbec625",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
                     "name": "P2Dash",
                     "type": "Button",
                     "id": "ba558d8c-1650-4d63-991e-450eb0516c12",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "P2DashPC",
+                    "type": "Button",
+                    "id": "835ae158-e4c9-4e1c-9dee-c43c947697be",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -77,9 +137,29 @@
                     "priority": 0
                 },
                 {
+                    "name": "P1ShootPC",
+                    "type": "Button",
+                    "id": "887c3962-7a94-431d-8bab-6b0cbe3b5d11",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
                     "name": "P2Shoot",
                     "type": "Button",
                     "id": "8ee3cb83-dcdc-4fc6-812c-8d8a91faee01",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "P2ShootPC",
+                    "type": "Button",
+                    "id": "e38bb915-3c67-4e7e-a604-e170bb87c778",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -156,6 +236,72 @@
                 },
                 {
                     "name": "WASD",
+                    "id": "dd164353-abe0-498d-8627-a1751ff550a5",
+                    "path": "Dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P1MovePC",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "7b6b348e-de67-410b-95cf-f6717ef8db12",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P1MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "f6555767-b480-429f-aef4-c58a8eb8af6b",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P1MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "6c6d1041-abe6-4300-a206-44f0906486b3",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P1MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "eec02029-c5e5-4864-b35d-939dd2fe237c",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P1MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "8b14371a-60f4-4858-887d-3a25d2ecad3c",
+                    "path": "<XRController>/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "P1MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "WASD",
                     "id": "db263f22-04b8-4420-92ba-c46b85a4f9ec",
                     "path": "Dpad",
                     "interactions": "",
@@ -221,6 +367,72 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "WASD",
+                    "id": "dfd56be1-160f-48f2-af79-c8f0c54cb4ce",
+                    "path": "Dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P2MovePC",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "5d5d7183-273b-470f-8a56-524bb26ec83b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P2MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "d6966e1a-7d7b-4485-a6a2-478c7e01d66a",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P2MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "afeb21cc-59a5-4214-9194-9ddf69eb346b",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P2MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "d3056235-1791-4716-8a21-8158476226ff",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "P2MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "91ee290a-56a2-4fcf-95e3-84a52f145056",
+                    "path": "<XRController>/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "P2MovePC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "",
                     "id": "b3c1c7f0-bd20-4ee7-a0f1-899b24bca6d7",
                     "path": "<Keyboard>/z",
@@ -239,6 +451,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "P1Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "551fbec1-ddc0-4874-af65-45c07675a7e6",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "P1AttackPC",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -266,6 +489,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d79c1761-bde1-41f2-975f-06ffeb429a8b",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "P2AttackPC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f2e9ba44-c423-42a7-ad56-f20975884794",
                     "path": "<Keyboard>/x",
                     "interactions": "",
@@ -283,6 +517,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "P1Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2480e71f-3f57-481e-b017-d089bfc5542c",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P1DashPC",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -310,6 +555,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e34aef21-bfc1-4b1c-80ed-65a0fe027c8c",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P2DashPC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1dfd295d-7fa3-4a66-93d8-e254be610039",
                     "path": "<Keyboard>/c",
                     "interactions": "",
@@ -332,6 +588,17 @@
                 },
                 {
                     "name": "",
+                    "id": "fcca5363-4e2f-489b-a937-47d312d1e910",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P1ShootPC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3d7d9f8f-46bf-4a21-93d3-9cb1094b7e5b",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -349,6 +616,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "P2Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6491464d-0507-4499-8d1a-c4ba11512e8b",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P2ShootPC",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

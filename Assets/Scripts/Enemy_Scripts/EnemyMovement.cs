@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 public class EnemyMovemnt : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class EnemyMovemnt : MonoBehaviour
     private NavMeshAgent chaser;
     public float speed;
     public TagHandle Player;
-
+    public float disableDuration = 0.3f;   
+    private bool isAgentDisabled = false;
     void Start()
     {
         chaser = GetComponent<NavMeshAgent>();
@@ -19,12 +21,28 @@ public class EnemyMovemnt : MonoBehaviour
     }
     void Update()
     {
+        if (isAgentDisabled) return;
         GameObject targetPlayer = GetClosestPlayer();
         if (targetPlayer != null)
         {
             chaser.SetDestination(targetPlayer.transform.position);
             FlipSprite(targetPlayer.transform.position);
         }
+    }
+
+    public IEnumerator DisableAgentRoutine()
+    {
+        isAgentDisabled = true;
+
+        // 1. Completely turn off the NavMeshAgent component so external forces can push it
+        chaser.enabled = false;
+
+        // 2. Wait for the duration of the hit/knockback state
+        yield return new WaitForSeconds(disableDuration);
+
+        // 3. Turn the NavMeshAgent back on and resume tracking
+        chaser.enabled = true;
+        isAgentDisabled = false;
     }
     GameObject GetClosestPlayer()
     {

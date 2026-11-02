@@ -8,10 +8,11 @@ public class PlayerControler : MonoBehaviour
     //[SerializeField] private string playerShoot;
     private InputAction move;
     [SerializeField] private Rigidbody2D rb;
-    private Vector2 playerMovement;
-    private Vector2 moveDirection;
+    public Vector2 playerMovement;
+    public Vector2 moveDirection;
     public float baseSpeed;
     public float moveSpeed;
+    [SerializeField] private Animator animator;
 
     private Vector2 lastPosition;
     [SerializeField] private float walkSoundTimer;
@@ -20,6 +21,9 @@ public class PlayerControler : MonoBehaviour
 
     void Start()
     {
+        if(ControlSchemeUsed.controlSchemeToUse == 1){
+            playerMove = playerMove + "PC";
+        }
         move = InputSystem.actions.FindAction(playerMove);
         move.performed += movePerformed;
         move.canceled += moveCanceled;
@@ -33,9 +37,12 @@ public class PlayerControler : MonoBehaviour
     }
     public void moving()
     {
-        if(GetComponent<TargetScript>().isStunned == false){
-        playerMovement = moveDirection * moveSpeed;
+        if(GetComponent<TargetScript>().isStunned == false)
+        {
+            playerMovement = moveDirection * moveSpeed;
         }
+        animator.SetFloat("Vertical", moveDirection.y);
+        animator.SetFloat("Horizontal", moveDirection.x);
     }
 
     private void moveCanceled(InputAction.CallbackContext obj)

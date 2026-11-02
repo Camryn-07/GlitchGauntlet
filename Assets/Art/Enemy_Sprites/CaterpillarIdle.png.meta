@@ -1,22 +1,70 @@
 fileFormatVersion: 2
-guid: a3317a1a5e59b444bbaa4e86a45885e2
+guid: abbda3a04d3ab4e418fe2d0ff1d00fc8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5715331457109223277
-    second: Caterpillar Full_0
+      213: -9165919317051786019
+    second: CaterpillarIdle_0
   - first:
-      213: -3996814957690693067
-    second: Caterpillar Full_1
+      213: -4427428653860431945
+    second: CaterpillarIdle_1
   - first:
-      213: -1457503022546723265
-    second: Caterpillar Full_2
+      213: 3296968568785145943
+    second: CaterpillarIdle_2
   - first:
-      213: -8472064485379338691
-    second: Caterpillar Full_3
+      213: -5508932078452669788
+    second: CaterpillarIdle_3
   - first:
-      213: -3781513816332285797
-    second: Caterpillar Full_4
+      213: 8321016089275788012
+    second: CaterpillarIdle_4
+  - first:
+      213: 5554138868083099987
+    second: CaterpillarIdle_5
+  - first:
+      213: -7945896664088230723
+    second: CaterpillarIdle_6
+  - first:
+      213: -3928639031083358496
+    second: CaterpillarIdle_7
+  - first:
+      213: -3358382250296329461
+    second: CaterpillarIdle_8
+  - first:
+      213: -8323373847473921881
+    second: CaterpillarIdle_9
+  - first:
+      213: 4814889675428040976
+    second: CaterpillarIdle_10
+  - first:
+      213: 2221269673670154366
+    second: CaterpillarIdle_11
+  - first:
+      213: 6578897754523531387
+    second: CaterpillarIdle_12
+  - first:
+      213: -4719159514128442734
+    second: CaterpillarIdle_13
+  - first:
+      213: -1306605078899956030
+    second: CaterpillarIdle_14
+  - first:
+      213: 6065394370864694430
+    second: CaterpillarIdle_15
+  - first:
+      213: 7356159663996883270
+    second: CaterpillarIdle_16
+  - first:
+      213: -4089194993295172495
+    second: CaterpillarIdle_17
+  - first:
+      213: 294060278774001499
+    second: CaterpillarIdle_18
+  - first:
+      213: -5707977551436550779
+    second: CaterpillarIdle_19
+  - first:
+      213: 3518232066587179460
+    second: CaterpillarIdle_20
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +111,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 175
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,141 +156,93 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caterpillar Full_0
+      name: CaterpillarIdle_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 107
-        width: 265
+        y: 757
+        width: 420
+        height: 383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7534ac81d9e82c0800000000000000
+      internalID: -4427428653860431945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaterpillarIdle_6
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 766
+        width: 419
         height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 398936522501fa0b0800000000000000
-      internalID: -5715331457109223277
+      spriteID: db44f0b45118ab190800000000000000
+      internalID: -7945896664088230723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caterpillar Full_1
+      name: CaterpillarIdle_11
       rect:
         serializedVersion: 2
-        x: 275
-        y: 107
-        width: 146
-        height: 362
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 53ad0e5d8f57888c0800000000000000
-      internalID: -3996814957690693067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caterpillar Full_2
-      rect:
-        serializedVersion: 2
-        x: 431
-        y: 251
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f3e5b0229b8e5cbe0800000000000000
-      internalID: -1457503022546723265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caterpillar Full_3
-      rect:
-        serializedVersion: 2
-        x: 491
+        x: 0
         y: 95
-        width: 266
-        height: 362
+        width: 420
+        height: 386
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3e03cacc3e2d6a80800000000000000
-      internalID: -8472064485379338691
+      spriteID: e781579dff883de10800000000000000
+      internalID: 2221269673670154366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caterpillar Full_4
+      name: CaterpillarIdle_17
       rect:
         serializedVersion: 2
-        x: 767
-        y: 107
-        width: 146
-        height: 362
+        x: 959
+        y: 108
+        width: 422
+        height: 360
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b984848283d558bc0800000000000000
-      internalID: -3781513816332285797
+      spriteID: 17cd55fa1d24047c0800000000000000
+      internalID: -4089194993295172495
       vertices: []
       indices: 
       edges: []
@@ -251,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: be3f6fa83a574f64e919a8bb9be7bfff
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +261,27 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Caterpillar Full_0: -5715331457109223277
-      Caterpillar Full_1: -3996814957690693067
-      Caterpillar Full_2: -1457503022546723265
-      Caterpillar Full_3: -8472064485379338691
-      Caterpillar Full_4: -3781513816332285797
+      CaterpillarIdle_0: -9165919317051786019
+      CaterpillarIdle_1: -4427428653860431945
+      CaterpillarIdle_10: 4814889675428040976
+      CaterpillarIdle_11: 2221269673670154366
+      CaterpillarIdle_12: 6578897754523531387
+      CaterpillarIdle_13: -4719159514128442734
+      CaterpillarIdle_14: -1306605078899956030
+      CaterpillarIdle_15: 6065394370864694430
+      CaterpillarIdle_16: 7356159663996883270
+      CaterpillarIdle_17: -4089194993295172495
+      CaterpillarIdle_18: 294060278774001499
+      CaterpillarIdle_19: -5707977551436550779
+      CaterpillarIdle_2: 3296968568785145943
+      CaterpillarIdle_20: 3518232066587179460
+      CaterpillarIdle_3: -5508932078452669788
+      CaterpillarIdle_4: 8321016089275788012
+      CaterpillarIdle_5: 5554138868083099987
+      CaterpillarIdle_6: -7945896664088230723
+      CaterpillarIdle_7: -3928639031083358496
+      CaterpillarIdle_8: -3358382250296329461
+      CaterpillarIdle_9: -8323373847473921881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

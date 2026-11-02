@@ -4,7 +4,9 @@ using UnityEngine;
 public class CampZone2D : MonoBehaviour
 {
     [SerializeField] private GameObject[] upgrades;
-    public GameObject enemyPrefab;
+    private GameObject enemyPrefab;
+    [SerializeField] private GameObject[] enemyInCamp;
+    public GameObject circleEnemy;
     public float respawnDelay = 5f;
     private GameObject randomUpgrades;
     private System.Collections.Generic.List<Vector3> localSpawnPositions = new System.Collections.Generic.List<Vector3>();
@@ -50,9 +52,11 @@ public class CampZone2D : MonoBehaviour
         yield return new WaitForSeconds(respawnDelay);
         foreach (Vector3 localPos in localSpawnPositions)
         {
+            int enemyList = UnityEngine.Random.Range(0, enemyInCamp.Length);
+            enemyPrefab = enemyInCamp[enemyList];
             if (enemyPrefab != null)
             {
-                GameObject newEnemy = Instantiate(enemyPrefab, transform);
+                GameObject newEnemy = Instantiate(enemyPrefab,transform);
                 newEnemy.transform.localPosition = localPos;
                 newEnemy.GetComponent<UnityEngine.AI.NavMeshAgent>().Warp(newEnemy.transform.position);
             }

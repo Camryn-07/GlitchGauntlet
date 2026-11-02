@@ -18,17 +18,23 @@ public class DashPowerup : MonoBehaviour
     [SerializeField] private float dashCooldownTime;
     public bool canDash;
     public AudioClip dashSound;
-    
+    private bool wasMovingBeforeDash;
+    [SerializeField] private GameObject dashTrailsObj;
+    private TrailRenderer[] dashTrails;
     void Start()
     {
+        if(ControlSchemeUsed.controlSchemeToUse == 1){
+            playerDash = playerDash + "PC";
+        }
         canDash = true;
         active = false;
         dLevel = 0;
         dashPower = 0;
         dashAction = InputSystem.actions.FindAction(playerDash);
         dashAction.performed += dashActionPerformed;
+        dashTrails = dashTrailsObj.GetComponentsInChildren<TrailRenderer>();
     }
-
+   
     private void dashActionPerformed(InputAction.CallbackContext obj)
     {
         Debug.Log("try to dash.");
@@ -43,24 +49,57 @@ public class DashPowerup : MonoBehaviour
     private IEnumerator dashMovement()
     {
         canDash = false;
-        //make player super fast for a time
+
+        // 1. Check if the player is actually pressing a direction when they start the dash
+        wasMovingBeforeDash = (PC.moveDirection != Vector2.zero);
+
         PC.moveSpeed = PC.moveSpeed + dashPower;
         Debug.Log("am fast");
+
         PC.moving();
+        UpdateDashTrails(true);
         yield return new WaitForSeconds(dashTime);
+        endDash();
+    }
+    private void endDash()
+    {
         Debug.Log(PC.moveSpeed);
-        //reset player speed
-        Debug.Log("am normal speed");
+
         PC.moveSpeed = PC.baseSpeed;
+        Debug.Log("am normal speed");
+
+        bool isTouchingControls = (Keyboard.current != null && Keyboard.current.anyKey.isPressed) ||
+                                  (Gamepad.current != null && Gamepad.current.leftStick.ReadValue().magnitude > 0.15f);
+
+        if (isTouchingControls)
+        {
+            PC.moving();
+        }
+        else
+        {
+            PC.moveDirection = Vector2.zero;
+            PC.playerMovement = Vector2.zero;
+            Debug.Log("Controls empty. Character stopped completely.");
+        }
+
         Debug.Log(PC.moveSpeed);
-        //cooldown
-        Debug.Log("gotta wait");
+        StartCoroutine(restartDash());
+    }
+    private IEnumerator restartDash()
+    {
         yield return new WaitForSeconds(dashCooldownTime);
         Debug.Log("done waiting");
         canDash = true;
-        StopCoroutine(dashRoutine);
+        UpdateDashTrails(false);
+        dashRoutine = null;
     }
-
+    private void UpdateDashTrails(bool isEmitting)
+    {
+        foreach (TrailRenderer trail in dashTrails)
+        {
+            trail.emitting = isEmitting;
+        }   
+    }
     public void LevelUpDash()
     {
         //initial activation

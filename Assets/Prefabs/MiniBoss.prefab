@@ -171,10 +171,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: -0.43281078, y: 1.0432944}
+      - {x: -0.2934596, y: 0.78596646}
+      - {x: 0.4620184, y: 0.18417534}
+      - {x: -0.34219837, y: -0.086367264}
+      - {x: -1.9169147, y: -0.76001984}
+      - {x: -1.9202142, y: -1.2471464}
+      - {x: 1.4888899, y: -1.3133485}
+      - {x: 2.0706456, y: -0.5733204}
+      - {x: 1.6914972, y: -0.37886593}
+      - {x: 1.0913382, y: 0.20658067}
+      - {x: -0.21536717, y: 1.256603}
   m_UseDelaunayMesh: 1
 --- !u!114 &7065642123875843812
 MonoBehaviour:
@@ -200,6 +207,8 @@ MonoBehaviour:
   attack: {fileID: 0}
   scorePerHit: 50
   scoreOnDeath: 450
+  scoreLost: -25
+  flashTime: 500
 --- !u!114 &7303766371735994667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,9 +241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406ef37db06e15445bd61e0b2656c5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovemnt
-  player: {fileID: 0}
-  player2: {fileID: 0}
-  speed: 2
+  players: []
+  speed: 1
+  disableDuration: 0.3
 --- !u!195 &-2110219057814122727
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -269,11 +278,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a7126570a605140a1ed9e37c7d16de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossShooting
+  TC: {fileID: 7065642123875843812}
   ammo: {fileID: 217118252937236647, guid: 6f2b443231623a242b8f1ece777ca69f, type: 3}
   warningSign: {fileID: 3404616638028895903, guid: 1849647f1f0945d44966ec00731d4cf7, type: 3}
-  timeBetweenAttacks: 5
+  timeBetweenAttacks: 4
   attackDuration: 3
   spawnInterval: 0.2
-  telegraphTime: 0.7
-  spawnWidth: 8
-  spawnHeight: 6
+  telegraphTime: 0.9
+  attackRadius: 7
+  fallHeight: 5
+  scanHeightOffset: 3
+  castRadius: 0.35
+  tilemapLayer:
+    serializedVersion: 2
+    m_Bits: 1
