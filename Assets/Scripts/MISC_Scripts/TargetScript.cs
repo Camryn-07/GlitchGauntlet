@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Threading.Tasks;
+using System;
 
 public class TargetScript : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class TargetScript : MonoBehaviour
     [SerializeField]
     private int scoreLost = 100;
     [SerializeField] private int flashTime = 500;
-
+    public static Action startBossShooting;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -66,6 +67,7 @@ public class TargetScript : MonoBehaviour
     {
         if(canTakeDamage)
         {
+            startBossShooting?.Invoke();
             if (isPlayer1)
             {
                 Score.instance.ChangeP1Score(scorePerHit);
