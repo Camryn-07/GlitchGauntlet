@@ -281,9 +281,9 @@ MonoBehaviour:
   TC: {fileID: 7065642123875843812}
   ammo: {fileID: 217118252937236647, guid: 6f2b443231623a242b8f1ece777ca69f, type: 3}
   warningSign: {fileID: 3404616638028895903, guid: 1849647f1f0945d44966ec00731d4cf7, type: 3}
-  timeBetweenAttacks: 3
-  attackDuration: 4
-  spawnInterval: 0.1
+  timeBetweenAttacks: 4
+  attackDuration: 3
+  spawnInterval: 0.2
   telegraphTime: 0.9
   attackRadius: 7
   fallHeight: 5
