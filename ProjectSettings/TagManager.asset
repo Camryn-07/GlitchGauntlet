@@ -7,6 +7,7 @@ TagManager:
   - Hitbox
   - DashPowerUp
   - ProjectilePowerUp
+  - WallTrigger
   layers:
   - Default
   - TransparentFX
