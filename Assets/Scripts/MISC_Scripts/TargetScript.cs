@@ -4,6 +4,11 @@ using System;
 
 public class TargetScript : MonoBehaviour
 {
+    //0 = p1
+    //1 = p2
+    //2 = enemy
+    //3 = boss
+    public int targetType;
     //Works with HitboxScript
     public int targetTeam;
     //players should have canTakeDamage marked false, enemies should have it set to true.
