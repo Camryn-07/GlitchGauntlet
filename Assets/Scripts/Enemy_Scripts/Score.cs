@@ -40,12 +40,13 @@ public class Score : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
 
-            if (countdown == 50)
+            if (countdown == 30)
             {
                 SpawnBoss();
             }
             if (countdown == 0)
             {
+                Time.timeScale = 0;
                 controlsP1.SetActive(false);
                 controlsP2.SetActive(false);
                 if (scoreP1 > scoreP2)
@@ -85,6 +86,10 @@ public class Score : MonoBehaviour
         scoreP2 += change;
         scoreP2 = Mathf.Clamp(scoreP2 + change, 0, 99999999);
         P2ScoreText.text = "Player2:" + scoreP2;
+    }
+    private void Pause(bool pause)
+    {
+        
     }
 }
 
