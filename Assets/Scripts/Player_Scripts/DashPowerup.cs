@@ -70,7 +70,7 @@ public class DashPowerup : MonoBehaviour
 
         bool isTouchingControls = (Keyboard.current != null && Keyboard.current.anyKey.isPressed) ||
                                   (Gamepad.current != null && Gamepad.current.leftStick.ReadValue().magnitude > 0.15f);
-
+        UpdateDashTrails(false);
         if (isTouchingControls)
         {
             PC.moving();
@@ -90,7 +90,6 @@ public class DashPowerup : MonoBehaviour
         yield return new WaitForSeconds(dashCooldownTime);
         Debug.Log("done waiting");
         canDash = true;
-        UpdateDashTrails(false);
         dashRoutine = null;
     }
     private void UpdateDashTrails(bool isEmitting)
