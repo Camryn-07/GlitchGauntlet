@@ -164,6 +164,10 @@ public class TargetScript : MonoBehaviour
             }
             
         }
+        if (triggerObject.gameObject.CompareTag("WallTrigger") && triggerObject.gameObject.GetComponent<WallTriggerer>().hasSummoned == false && gameObject.CompareTag("Player"))
+        {
+            triggerObject.gameObject.GetComponent<WallTriggerer>().summonWall();
+        }
     }
     public async Task TempFlash(){
         Color tempColorStore = gameObject.GetComponent<Renderer>().material.color;
