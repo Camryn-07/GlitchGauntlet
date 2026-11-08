@@ -91,6 +91,10 @@ public class BasicAttackScript : MonoBehaviour
             }
         }
     }
+    void OnDestroy(){
+        attack.performed -= attackPerformed;
+        shoot.performed -= shootPerformed;
+    }
     //void OnAttack(){
         
     //} 
