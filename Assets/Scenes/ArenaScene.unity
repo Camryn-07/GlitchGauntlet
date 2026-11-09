@@ -1955,6 +1955,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 541472500395528404, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1826572454}
+    - target: {fileID: 541472500395528404, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: dashTrailsObj
       value: 
       objectReference: {fileID: 1942305255}
@@ -2085,6 +2089,11 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 549782541}
+--- !u!95 &1826572454 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1674900626353399552, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+  m_PrefabInstance: {fileID: 1826572445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1923135856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9096087639803203625, guid: 762b138098ee0be40a1fdaefe7171229, type: 3}
@@ -2256,6 +2265,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 541472500395528404, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1946563585}
     - target: {fileID: 541472500395528404, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: playerDash
       value: P2Dash
@@ -2451,6 +2464,11 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
+--- !u!95 &1946563585 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1674900626353399552, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
+  m_PrefabInstance: {fileID: 1946563576}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2071669323
 GameObject:
   m_ObjectHideFlags: 0
