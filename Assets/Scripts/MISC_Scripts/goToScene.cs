@@ -22,7 +22,11 @@ public class goToScene : MonoBehaviour
     public void goToTheScene(){
         SceneManager.LoadScene(sceneNum); 
     }
-
+    public void restartScene()
+    {
+        SceneManager.LoadScene(sceneNum);
+        Time.timeScale = 1;
+    }
     public void Unppause()
     {
         canvas.enabled = false;

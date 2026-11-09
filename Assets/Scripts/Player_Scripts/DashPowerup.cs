@@ -23,6 +23,7 @@ public class DashPowerup : MonoBehaviour
     [SerializeField] private GameObject dashInactiveIcon;
     [SerializeField] private GameObject dashTrailsObj;
     private TrailRenderer[] dashTrails;
+    [SerializeField] private Animator animator;
     void Start()
     {
         if(ControlSchemeUsed.controlSchemeToUse == 1){
@@ -59,6 +60,7 @@ public class DashPowerup : MonoBehaviour
 
         PC.moveSpeed = PC.moveSpeed + dashPower;
         Debug.Log("am fast");
+        animator.SetBool("IsDashing", true);
 
         PC.moving();
         UpdateDashTrails(true);
@@ -87,6 +89,7 @@ public class DashPowerup : MonoBehaviour
         }
 
         Debug.Log(PC.moveSpeed);
+        animator.SetBool("IsDashing", false);
         StartCoroutine(restartDash());
     }
     private IEnumerator restartDash()
