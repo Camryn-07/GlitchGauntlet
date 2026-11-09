@@ -19,6 +19,8 @@ public class DashPowerup : MonoBehaviour
     public bool canDash;
     public AudioClip dashSound;
     private bool wasMovingBeforeDash;
+    [SerializeField] private GameObject dashAbilityIcon;
+    [SerializeField] private GameObject dashInactiveIcon;
     [SerializeField] private GameObject dashTrailsObj;
     private TrailRenderer[] dashTrails;
     void Start()
@@ -28,6 +30,8 @@ public class DashPowerup : MonoBehaviour
         }
         canDash = true;
         active = false;
+        dashAbilityIcon.SetActive(false);
+        dashInactiveIcon.SetActive(false);
         dLevel = 0;
         dashPower = 0;
         dashAction = InputSystem.actions.FindAction(playerDash);
@@ -70,7 +74,7 @@ public class DashPowerup : MonoBehaviour
 
         bool isTouchingControls = (Keyboard.current != null && Keyboard.current.anyKey.isPressed) ||
                                   (Gamepad.current != null && Gamepad.current.leftStick.ReadValue().magnitude > 0.15f);
-
+        UpdateDashTrails(false);
         if (isTouchingControls)
         {
             PC.moving();
@@ -87,10 +91,11 @@ public class DashPowerup : MonoBehaviour
     }
     private IEnumerator restartDash()
     {
+        dashInactiveIcon.SetActive(true);
         yield return new WaitForSeconds(dashCooldownTime);
+        dashInactiveIcon.SetActive(false);
         Debug.Log("done waiting");
         canDash = true;
-        UpdateDashTrails(false);
         dashRoutine = null;
     }
     private void UpdateDashTrails(bool isEmitting)
@@ -105,6 +110,7 @@ public class DashPowerup : MonoBehaviour
         //initial activation
         if (!active)
         {
+            dashAbilityIcon.SetActive(true);
             active = true;
         }
         //progressive dash speed per level of upgrade

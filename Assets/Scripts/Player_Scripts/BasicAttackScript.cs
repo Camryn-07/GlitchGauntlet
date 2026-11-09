@@ -19,6 +19,8 @@ public class BasicAttackScript : MonoBehaviour
     [SerializeField] private float shootCDTimer;
     //the shoot cooldown
     [SerializeField] private float shootCDStandard;
+    //icon shows over shoot ability icon when shoot is inactive
+    [SerializeField] private GameObject shootInactiveIcon;
     //animation controller
     [SerializeField] private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +29,8 @@ public class BasicAttackScript : MonoBehaviour
     // Update is called once per frame
     public AudioClip gauntlets;
     void Start(){
+        
+        shootInactiveIcon.SetActive(false);
         if(ControlSchemeUsed.controlSchemeToUse == 1){
             playerAttack = playerAttack + "PC";
             playerShoot = playerShoot + "PC";
@@ -50,6 +54,9 @@ public class BasicAttackScript : MonoBehaviour
             if(shootCDTimer < 0){
                 shootCDTimer = 0;
             }
+            if(shootCDTimer <= 0){
+                shootInactiveIcon.SetActive(false);
+            }
         }
     }
     private void attackPerformed(InputAction.CallbackContext obj)
@@ -72,7 +79,9 @@ public class BasicAttackScript : MonoBehaviour
     private void shootPerformed(InputAction.CallbackContext obj)
     {
         if(shootCDTimer <= 0){
+            
             if(gameObject.GetComponent<ProjectilePowerup>().active == true){
+            shootInactiveIcon.SetActive(true);
             GameObject summonedObjR = Instantiate(projectileHitbox, transform.position, transform.rotation);
             HitboxScript hitBoxR = summonedObjR.GetComponentInChildren<HitboxScript>();
             hitBoxR.hitboxTeam = gameObject.GetComponent<TargetScript>().targetTeam;
@@ -81,6 +90,10 @@ public class BasicAttackScript : MonoBehaviour
             shootCDTimer = shootCDStandard;
             }
         }
+    }
+    void OnDestroy(){
+        attack.performed -= attackPerformed;
+        shoot.performed -= shootPerformed;
     }
     //void OnAttack(){
         
