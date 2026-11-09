@@ -37,6 +37,7 @@ public class Score : MonoBehaviour
     {
         while (countdown > 0)
         {
+            Time.timeScale = 1;
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
 
