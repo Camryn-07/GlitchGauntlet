@@ -72,15 +72,19 @@ public class TargetScript : MonoBehaviour
     {
         if(canTakeDamage)
         {
-            startBossShooting?.Invoke();
-            if (isPlayer1)
+            if (targetType == 3)
             {
+                startBossShooting?.Invoke();
+                if (isPlayer1)
+                {
                 Score.instance.ChangeP1Score(scorePerHit);
-            }
-            else
-            {
+                }
+                else
+                {
                 Score.instance.ChangeP2Score(scorePerHit);
+                }
             }
+
 
             healthValue -= damageValue;
             if (healthValue <= 0)
