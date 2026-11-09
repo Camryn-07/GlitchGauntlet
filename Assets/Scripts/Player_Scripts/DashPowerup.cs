@@ -47,6 +47,7 @@ public class DashPowerup : MonoBehaviour
         {
             Debug.Log("Dash start");
             AudioSource.PlayClipAtPoint(dashSound, transform.position);
+            animator.SetBool("Is_Dashing", true);
             dashRoutine = StartCoroutine(dashMovement());
         }
     }
@@ -60,7 +61,6 @@ public class DashPowerup : MonoBehaviour
 
         PC.moveSpeed = PC.moveSpeed + dashPower;
         Debug.Log("am fast");
-        animator.SetBool("IsDashing", true);
 
         PC.moving();
         UpdateDashTrails(true);
@@ -73,6 +73,7 @@ public class DashPowerup : MonoBehaviour
 
         PC.moveSpeed = PC.baseSpeed;
         Debug.Log("am normal speed");
+        animator.SetBool("Is_Dashing", false);
 
         bool isTouchingControls = (Keyboard.current != null && Keyboard.current.anyKey.isPressed) ||
                                   (Gamepad.current != null && Gamepad.current.leftStick.ReadValue().magnitude > 0.15f);
@@ -89,7 +90,6 @@ public class DashPowerup : MonoBehaviour
         }
 
         Debug.Log(PC.moveSpeed);
-        animator.SetBool("IsDashing", false);
         StartCoroutine(restartDash());
     }
     private IEnumerator restartDash()
