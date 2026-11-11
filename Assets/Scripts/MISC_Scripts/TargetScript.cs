@@ -26,10 +26,13 @@ public class TargetScript : MonoBehaviour
     private int scorePerHit = 50;
     [SerializeField]
     private int scoreOnDeath = 100;
-    [SerializeField]
+    [SerializeField] private Material flashMaterial;
+    private Material tempMatStore;
     private int scoreLost = 100;
     [SerializeField] private int flashTime = 500;
     public static Action startBossShooting;
+    [SerializeField] private bool spriteFlashPlayer;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -179,9 +182,18 @@ public class TargetScript : MonoBehaviour
         }
     }
     public async Task TempFlash(){
-        Color tempColorStore = gameObject.GetComponent<Renderer>().material.color;
-        gameObject.GetComponent<Renderer>().material.color = Color.black;
-        await Task.Delay(flashTime);
-        gameObject.GetComponent<Renderer>().material.color = tempColorStore;
+        if(spriteFlashPlayer == false){
+            tempMatStore = gameObject.GetComponent<SpriteRenderer>().material;
+            gameObject.GetComponent<SpriteRenderer>().material = flashMaterial;
+            await Task.Delay(flashTime);
+            gameObject.GetComponent<SpriteRenderer>().material = tempMatStore;
+        } else if(spriteFlashPlayer == true){
+            Debug.Log("spriteFlashPlayer True!!");
+            GameObject theSkin = gameObject.GetComponent<PlayerControler>().theSkin;
+            tempMatStore = theSkin.GetComponent<SpriteRenderer>().material;
+            theSkin.GetComponent<SpriteRenderer>().material = flashMaterial;
+            await Task.Delay(flashTime);
+            theSkin.GetComponent<SpriteRenderer>().material = tempMatStore;
+        }
     }
 }
