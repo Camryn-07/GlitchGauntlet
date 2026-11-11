@@ -208,7 +208,7 @@ MonoBehaviour:
   attack: {fileID: 0}
   scorePerHit: 50
   scoreOnDeath: 450
-  scoreLost: -25
+  flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
   flashTime: 500
 --- !u!114 &7303766371735994667
 MonoBehaviour:

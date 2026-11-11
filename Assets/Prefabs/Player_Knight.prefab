@@ -653,6 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85791b54a7e3ae94b8e42c84958381ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
+  targetType: 0
   targetTeam: 1
   canTakeDamage: 0
   inIFrames: 0
@@ -665,8 +666,9 @@ MonoBehaviour:
   attack: {fileID: 8300000, guid: 46b4dc381d5b57249b7e7b3d5d079cb9, type: 3}
   scorePerHit: 0
   scoreOnDeath: 0
-  scoreLost: -25
+  flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
   flashTime: 500
+  spriteInChildren: 1
 --- !u!114 &7975114136054503538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,6 +689,7 @@ MonoBehaviour:
   attackCDStandard: 1
   shootCDTimer: 0
   shootCDStandard: 0.5
+  shootInactiveIcon: {fileID: 0}
   animator: {fileID: 1674900626353399552}
   isPlayer1: 1
   gauntlets: {fileID: 8300000, guid: bf1558c4e01eca44b9209c5a158390a7, type: 3}
@@ -728,7 +731,10 @@ MonoBehaviour:
   dashCooldownTime: 1
   canDash: 0
   dashSound: {fileID: 8300000, guid: b26a57f41ab2c02469be8b6702b3c202, type: 3}
+  dashAbilityIcon: {fileID: 0}
+  dashInactiveIcon: {fileID: 0}
   dashTrailsObj: {fileID: 1915114744407417533}
+  animator: {fileID: 0}
 --- !u!114 &7531824590205836986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,6 +752,7 @@ MonoBehaviour:
   projLevelMax: 4
   projPowerMult: 0.3
   projPowerBase: 1
+  shootAbilityIcon: {fileID: 0}
   projPower: 0
 --- !u!95 &1674900626353399552
 Animator:
