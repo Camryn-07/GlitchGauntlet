@@ -668,7 +668,8 @@ MonoBehaviour:
   scoreOnDeath: 0
   flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
   flashTime: 500
-  spriteInChildren: 1
+  spriteFlashPlayer: 0
+  deathParticles: {fileID: 7975765184272471805, guid: 342f5b858421f194eaf019d36d83b484, type: 3}
 --- !u!114 &7975114136054503538
 MonoBehaviour:
   m_ObjectHideFlags: 0
