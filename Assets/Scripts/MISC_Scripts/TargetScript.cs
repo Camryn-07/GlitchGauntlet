@@ -32,6 +32,7 @@ public class TargetScript : MonoBehaviour
     [SerializeField] private int flashTime = 500;
     public static Action startBossShooting;
     [SerializeField] private bool spriteFlashPlayer;
+    [SerializeField] private GameObject deathParticles;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -100,6 +101,7 @@ public class TargetScript : MonoBehaviour
                 {
                     Score.instance.ChangeP2Score(scoreOnDeath);
                 }
+                Instantiate(deathParticles, transform.position, transform.rotation);
                 Destroy(gameObject);           
             }
         }
