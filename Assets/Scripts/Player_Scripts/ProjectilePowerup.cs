@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using TMPro;
 public class ProjectilePowerup : MonoBehaviour
 {
     public bool active;
@@ -8,6 +8,7 @@ public class ProjectilePowerup : MonoBehaviour
     [SerializeField] private float projPowerMult;
     [SerializeField] private float projPowerBase;
     [SerializeField] private GameObject shootAbilityIcon;
+    [SerializeField] private TMP_Text projLevelUpText;
     public float projPower;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,6 +35,7 @@ public class ProjectilePowerup : MonoBehaviour
         {
             pLevel = projLevelMax;
         }
+        projLevelUpText.text = pLevel + " ";
         projPower = projPowerBase * (1 + (projPowerMult * pLevel));
     }
 }

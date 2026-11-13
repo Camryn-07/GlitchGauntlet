@@ -33,6 +33,7 @@ public class TargetScript : MonoBehaviour
     public static Action startBossShooting;
     [SerializeField] private bool spriteFlashPlayer;
     [SerializeField] private GameObject deathParticles;
+    [SerializeField] private bool flashing;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -184,18 +185,22 @@ public class TargetScript : MonoBehaviour
         }
     }
     public async Task TempFlash(){
-        if(spriteFlashPlayer == false){
+        if(spriteFlashPlayer == false && flashing == false){
+            flashing = true;
             tempMatStore = gameObject.GetComponent<SpriteRenderer>().material;
             gameObject.GetComponent<SpriteRenderer>().material = flashMaterial;
             await Task.Delay(flashTime);
             gameObject.GetComponent<SpriteRenderer>().material = tempMatStore;
-        } else if(spriteFlashPlayer == true){
+            flashing = false;
+        } else if(spriteFlashPlayer == true && flashing == false){
+            flashing = true;
             Debug.Log("spriteFlashPlayer True!!");
             GameObject theSkin = gameObject.GetComponent<PlayerControler>().theSkin;
             tempMatStore = theSkin.GetComponent<SpriteRenderer>().material;
             theSkin.GetComponent<SpriteRenderer>().material = flashMaterial;
             await Task.Delay(flashTime);
             theSkin.GetComponent<SpriteRenderer>().material = tempMatStore;
+            flashing = false;
         }
     }
 }
