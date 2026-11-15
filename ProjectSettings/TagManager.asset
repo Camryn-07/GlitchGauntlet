@@ -8,6 +8,7 @@ TagManager:
   - DashPowerUp
   - ProjectilePowerUp
   - WallTrigger
+  - Button
   layers:
   - Default
   - TransparentFX
