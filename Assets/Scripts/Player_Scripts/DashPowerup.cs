@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class DashPowerup : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class DashPowerup : MonoBehaviour
     [SerializeField] private GameObject dashTrailsObj;
     private TrailRenderer[] dashTrails;
     [SerializeField] private Animator animator;
+    [SerializeField] private TMP_Text dashLevelUpText;
     void Start()
     {
         if(ControlSchemeUsed.controlSchemeToUse == 1){
@@ -122,6 +124,7 @@ public class DashPowerup : MonoBehaviour
         {
             dLevel = dashLevelMax;
         }
+        dashLevelUpText.text = dLevel + " ";
         dashPower = startupPower + (dashPowerScaling * dLevel);
     }
     private void OnDestroy()

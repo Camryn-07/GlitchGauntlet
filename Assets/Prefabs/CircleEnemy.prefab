@@ -302,8 +302,10 @@ MonoBehaviour:
   attack: {fileID: 8300000, guid: 46b4dc381d5b57249b7e7b3d5d079cb9, type: 3}
   scorePerHit: 0
   scoreOnDeath: 0
-  scoreLost: -25
+  flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
   flashTime: 0
+  spriteFlashPlayer: 0
+  deathParticles: {fileID: 7975765184272471805, guid: 342f5b858421f194eaf019d36d83b484, type: 3}
 --- !u!114 &5863675211909623963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,8 +655,10 @@ MonoBehaviour:
   attack: {fileID: 8300000, guid: 46b4dc381d5b57249b7e7b3d5d079cb9, type: 3}
   scorePerHit: 0
   scoreOnDeath: 250
-  scoreLost: -25
+  flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
   flashTime: 500
+  spriteFlashPlayer: 0
+  deathParticles: {fileID: 7975765184272471805, guid: 342f5b858421f194eaf019d36d83b484, type: 3}
 --- !u!114 &4195479446724231085
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ public class PlayerControler : MonoBehaviour
     private Vector2 lastPosition;
     [SerializeField] private float walkSoundTimer;
     [SerializeField] private AudioClip walk;
-    [SerializeField] private GameObject theSkin;
+    [SerializeField] public GameObject theSkin;
 
     void Start()
     {
