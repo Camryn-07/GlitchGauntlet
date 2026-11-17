@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9151066946425747900}
   - component: {fileID: 7616061536897835415}
   - component: {fileID: 4089717746554129826}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 6476432614952352485}
   - component: {fileID: 8177945435714235342}
   - component: {fileID: 5634365122117072904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1234696638815133974}
   - component: {fileID: 1013222930102637902}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BRCampWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   - component: {fileID: 1005775458513154557}
   - component: {fileID: 886359504942086134}
   - component: {fileID: 3411401184627971011}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 1488798541680667824}
   - component: {fileID: 5998292517687217818}
   - component: {fileID: 7594639463661403818}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 1151438688038610837}
   - component: {fileID: 1080313094906526576}
   - component: {fileID: 7377096553293997868}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
