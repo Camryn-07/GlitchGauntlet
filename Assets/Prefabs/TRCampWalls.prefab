@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6181001640903055985}
   - component: {fileID: 8626319561956258441}
   - component: {fileID: 1616281268145970705}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 8472398649674137925}
   - component: {fileID: 4724034844974308581}
   - component: {fileID: 5516389554886463087}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 5014058820932072540}
   - component: {fileID: 8036030804381275408}
   - component: {fileID: 8276911787278419577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 2087549072854197898}
   - component: {fileID: 1763778893988631466}
   - component: {fileID: 8725653148785428752}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 8447803414540998660}
   - component: {fileID: 7091693520939990797}
   - component: {fileID: 269708265689482806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8639205926489885578}
   - component: {fileID: 5449817968563559252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TRCampWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
