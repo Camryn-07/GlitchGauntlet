@@ -2303,6 +2303,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 3331854469406888737, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3745282656339886641, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
       propertyPath: m_fontColor.b
       value: 1
@@ -2335,6 +2339,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5591274111044920444, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
+      propertyPath: m_TagString
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678052952304052238, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7075660115941236383, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
       propertyPath: m_CullTransparentMesh
       value: 1
@@ -2350,6 +2362,10 @@ PrefabInstance:
     - target: {fileID: 8321204522306315028, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321204522306315028, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
+      propertyPath: m_TagString
+      value: Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
