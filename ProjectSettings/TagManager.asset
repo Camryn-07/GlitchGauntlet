@@ -18,12 +18,12 @@ TagManager:
   - UI
   - Wall
   - Floor
-  - Player
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player1
+  - Player2
+  - wallP1
+  - wallP2
+  - wallProjectile
+  - Projectile
   - 
   - 
   - 

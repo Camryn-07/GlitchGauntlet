@@ -28,7 +28,8 @@ public class TargetScript : MonoBehaviour
     private int scoreOnDeath = 100;
     [SerializeField] private Material flashMaterial;
     private Material tempMatStore;
-    private int scoreLost = 100;
+    [SerializeField]
+    private int scoreLost;
     [SerializeField] private int flashTime = 500;
     public static Action startBossShooting;
     [SerializeField] private bool spriteFlashPlayer;
