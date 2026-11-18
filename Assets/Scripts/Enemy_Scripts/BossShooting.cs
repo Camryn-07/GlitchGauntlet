@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class EnemyTilemapRainAttack2D : MonoBehaviour
+public class BossShooting : MonoBehaviour
 {
     public TargetScript TC;
     [Header("Attack Prefabs")]
@@ -22,6 +22,8 @@ public class EnemyTilemapRainAttack2D : MonoBehaviour
     public float castRadius = 0.3f;
     public LayerMask tilemapLayer;
 
+    [SerializeField] private Animator animator;
+
     private void OnEnable()
     {
         TargetScript.startBossShooting += BossAttack;
@@ -41,7 +43,9 @@ public class EnemyTilemapRainAttack2D : MonoBehaviour
     {
         while (true)
         {
+            animator.SetBool("isShooting", true);
             yield return StartCoroutine(SpawnObjectsRoutine());
+            animator.SetBool("isShooting", false);
             yield return new WaitForSeconds(timeBetweenAttacks);
         }
     }

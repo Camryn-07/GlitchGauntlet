@@ -136,7 +136,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9b3d06392c4fe7e4685e82ef63e95f1b, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -362,14 +362,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1035346279}
   - component: {fileID: 1035346281}
-  - component: {fileID: 1035346280}
   m_Layer: 0
   m_Name: hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1035346279
 Transform:
   m_ObjectHideFlags: 0
@@ -385,28 +384,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 86771691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1035346280
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035346278}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9b3d06392c4fe7e4685e82ef63e95f1b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1035346281
 SpriteRenderer:
   serializedVersion: 2
@@ -474,6 +451,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5544292699559504846, guid: 58378ce364fa5434bbe608232b42ed7d, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 86771682}
     - target: {fileID: 6513105606622381704, guid: 58378ce364fa5434bbe608232b42ed7d, type: 3}
       propertyPath: m_Size.x
       value: 5.8333335
