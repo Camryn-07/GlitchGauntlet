@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 7426029099433617637}
   - component: {fileID: 8567314483641884083}
   - component: {fileID: 1145469337712649234}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: P1HitboxTester
   m_TagString: Hitbox
   m_Icon: {fileID: 0}
