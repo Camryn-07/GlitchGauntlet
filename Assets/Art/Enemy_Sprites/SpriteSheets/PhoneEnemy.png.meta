@@ -1,22 +1,31 @@
 fileFormatVersion: 2
-guid: dae701e7ffc0869499b250c51891a32d
+guid: 0d8e7865ea7d01f4899425777d5ef361
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5630388027641687991
-    second: TankBoss (1)_0
+      213: -8137885751226017223
+    second: PhoneEnemy_0
   - first:
-      213: -9176900570771258326
-    second: TankBoss (1)_1
+      213: 3462937065124026408
+    second: PhoneEnemy_1
   - first:
-      213: 8170947577041862547
-    second: TankBoss (1)_2
+      213: -5750802382017881335
+    second: PhoneEnemy_2
   - first:
-      213: 640834850032016410
-    second: TankBoss (1)_3
+      213: 3298353971190891788
+    second: PhoneEnemy_3
   - first:
-      213: 130446870036203355
-    second: TankBoss (1)_4
+      213: -3414970807450754442
+    second: PhoneEnemy_4
+  - first:
+      213: 3565311549155461835
+    second: PhoneEnemy_5
+  - first:
+      213: -5133781736628044330
+    second: PhoneEnemy_6
+  - first:
+      213: 4457642850543174350
+    second: PhoneEnemy_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 180
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,111 +121,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TankBoss (1)_0
+      name: PhoneEnemy_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 263
-        width: 770
-        height: 518
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9401ec08be7dcd1b0800000000000000
-      internalID: -5630388027641687991
+      spriteID: 93ad57f860c601f80800000000000000
+      internalID: -8137885751226017223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankBoss (1)_1
+      name: PhoneEnemy_1
       rect:
         serializedVersion: 2
-        x: 791
-        y: 311
-        width: 49
-        height: 170
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a24891c5d8915a080800000000000000
-      internalID: -9176900570771258326
+      spriteID: 828504ec9e2de0030800000000000000
+      internalID: 3462937065124026408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankBoss (1)_2
+      name: PhoneEnemy_2
       rect:
         serializedVersion: 2
-        x: 35
-        y: 215
-        width: 722
-        height: 50
+        x: 128
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 39f3bef9789056170800000000000000
-      internalID: 8170947577041862547
+      spriteID: 90b9a5ed3bb0130b0800000000000000
+      internalID: -5750802382017881335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankBoss (1)_3
+      name: PhoneEnemy_3
       rect:
         serializedVersion: 2
-        x: 35
-        y: 179
-        width: 722
-        height: 50
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1c59db96e3b4e800800000000000000
-      internalID: 640834850032016410
+      spriteID: c05055c167b16cd20800000000000000
+      internalID: 3298353971190891788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankBoss (1)_4
+      name: PhoneEnemy_4
       rect:
         serializedVersion: 2
-        x: 35
-        y: 143
-        width: 722
-        height: 50
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b57c196bcb07fc100800000000000000
-      internalID: 130446870036203355
+      spriteID: 672a197d4269b90d0800000000000000
+      internalID: -3414970807450754442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneEnemy_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bca4201d6f78a7130800000000000000
+      internalID: 3565311549155461835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneEnemy_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddb5e1e5b421c8b0800000000000000
+      internalID: -5133781736628044330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PhoneEnemy_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec28f221e8abcdd30800000000000000
+      internalID: 4457642850543174350
       vertices: []
       indices: 
       edges: []
@@ -225,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 949cfe12f6333eb42a7820c36f04240b
     internalID: 0
     vertices: []
     indices: 
@@ -233,13 +308,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      TankBoss (1)_0: -5630388027641687991
-      TankBoss (1)_1: -9176900570771258326
-      TankBoss (1)_2: 8170947577041862547
-      TankBoss (1)_3: 640834850032016410
-      TankBoss (1)_4: 130446870036203355
+      PhoneEnemy_0: -8137885751226017223
+      PhoneEnemy_1: 3462937065124026408
+      PhoneEnemy_2: -5750802382017881335
+      PhoneEnemy_3: 3298353971190891788
+      PhoneEnemy_4: -3414970807450754442
+      PhoneEnemy_5: 3565311549155461835
+      PhoneEnemy_6: -5133781736628044330
+      PhoneEnemy_7: 4457642850543174350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
