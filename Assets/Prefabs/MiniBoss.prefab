@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 7376751030278011151}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3209, y: -5.5467, z: 0}
+  m_LocalPosition: {x: -6, y: 3.2, z: 0}
   m_LocalScale: {x: 1.6782073, y: 1.8667558, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -88,15 +88,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -5630388027641687991, guid: dae701e7ffc0869499b250c51891a32d, type: 3}
+  m_Sprite: {fileID: 2382390321909233758, guid: 38fa0c433c4292e4bbefba117d1bd7d9, type: 3}
   m_Color: {r: 1, g: 0.827044, b: 0.9641432, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.2777777, y: 2.8777778}
+  m_Size: {x: 5.8333335, y: 5.8333335}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!50 &1825561567024478892
 Rigidbody2D:
@@ -163,8 +163,8 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.2777777, y: 2.8777778}
-    newSize: {x: 4.2777777, y: 2.8777778}
+    oldSize: {x: 5.8333335, y: 5.8333335}
+    newSize: {x: 5.8333335, y: 5.8333335}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -205,14 +205,14 @@ MonoBehaviour:
   stunTimer: 0
   iFramesTimer: 0
   myRb: {fileID: 1825561567024478892}
-  attack: {fileID: 0}
+  attack: {fileID: 8300000, guid: b4da7990c8ca6ee4bad44863c650f950, type: 3}
   scorePerHit: 50
   scoreOnDeath: 450
   flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
   scoreLost: -100
   flashTime: 500
   spriteFlashPlayer: 0
-  deathParticles: {fileID: 0}
+  deathParticles: {fileID: 7975765184272471805, guid: 342f5b858421f194eaf019d36d83b484, type: 3}
   flashing: 0
 --- !u!114 &7303766371735994667
 MonoBehaviour:
@@ -288,12 +288,10 @@ MonoBehaviour:
   warningSign: {fileID: 3404616638028895903, guid: 1849647f1f0945d44966ec00731d4cf7, type: 3}
   timeBetweenAttacks: 4
   attackDuration: 3
-  spawnInterval: 0.2
+  spawnInterval: 0.05
   telegraphTime: 0.9
   attackRadius: 7
-  fallHeight: 5
-  scanHeightOffset: 3
-  castRadius: 0.35
+  checkForWalkableFloor: 0
   tilemapLayer:
     serializedVersion: 2
     m_Bits: 1

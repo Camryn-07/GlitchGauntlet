@@ -21,7 +21,7 @@ public class TargetScript : MonoBehaviour
     [SerializeField] private float iFramesTimer;
     [SerializeField] private Rigidbody2D myRb;
     public AudioClip attack;
-    
+
     [SerializeField]
     private int scorePerHit = 50;
     [SerializeField]
@@ -35,7 +35,7 @@ public class TargetScript : MonoBehaviour
     [SerializeField] private bool spriteFlashPlayer;
     [SerializeField] private GameObject deathParticles;
     [SerializeField] private bool flashing;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,16 +43,21 @@ public class TargetScript : MonoBehaviour
         healthValue = maxHealthValue;
     }
 
-    void Update(){
-        if(stunTimer > 0){
+    void Update()
+    {
+        if (stunTimer > 0)
+        {
             stunTimer -= Time.deltaTime;
-            if(stunTimer < 0){
+            if (stunTimer < 0)
+            {
                 stunTimer = 0;
             }
         }
-        if(iFramesTimer > 0){
+        if (iFramesTimer > 0)
+        {
             iFramesTimer -= Time.deltaTime;
-            if(iFramesTimer < 0){
+            if (iFramesTimer < 0)
+            {
                 iFramesTimer = 0;
             }
         }
@@ -60,14 +65,20 @@ public class TargetScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(stunTimer > 0){
+        if (stunTimer > 0)
+        {
             isStunned = true;
-        } else {
+        }
+        else
+        {
             isStunned = false;
         }
-        if(iFramesTimer > 0){
+        if (iFramesTimer > 0)
+        {
             inIFrames = true;
-        } else {
+        }
+        else
+        {
             inIFrames = false;
         }
     }
@@ -76,18 +87,18 @@ public class TargetScript : MonoBehaviour
     //handles being hit by a hitbox & the values pertaining to that
     public void isHitByAttack(bool isPlayer1, float damageValue, float kbStrength, Vector2 kbDirection, float stunTime, float iFrameTime)
     {
-        if(canTakeDamage)
+        if (canTakeDamage)
         {
             if (targetType == 3)
             {
                 startBossShooting?.Invoke();
                 if (isPlayer1)
                 {
-                Score.instance.ChangeP1Score(scorePerHit);
+                    Score.instance.ChangeP1Score(scorePerHit);
                 }
                 else
                 {
-                Score.instance.ChangeP2Score(scorePerHit);
+                    Score.instance.ChangeP2Score(scorePerHit);
                 }
             }
 
@@ -104,21 +115,22 @@ public class TargetScript : MonoBehaviour
                     Score.instance.ChangeP2Score(scoreOnDeath);
                 }
                 Instantiate(deathParticles, transform.position, transform.rotation);
-                Destroy(gameObject);           
+                Destroy(gameObject);
             }
         }
-         
+
         //sets the stun timer to stunTime if it would cause the stunned target to be stunned for longer
         //this is so you can't negate a large stun with a smaller stun
-        if(stunTime > stunTimer){
+        if (stunTime > stunTimer)
+        {
             isStunned = true;
-            AudioSource.PlayClipAtPoint(attack,transform.position);
+            AudioSource.PlayClipAtPoint(attack, transform.position);
             stunTimer = stunTime;
             myRb.linearVelocity = new Vector2(0, 0);
         }
         myRb.AddForce(kbDirection * kbStrength, ForceMode2D.Impulse);
         iFramesTimer = iFrameTime;
-        Debug.Log(gameObject.name+ "  Knockback: "+myRb.linearVelocity.magnitude);
+        Debug.Log(gameObject.name + "  Knockback: " + myRb.linearVelocity.magnitude);
         TempFlash();
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -130,7 +142,7 @@ public class TargetScript : MonoBehaviour
             Debug.Log("Hit player");
             if (collision.gameObject.TryGetComponent<BasicAttackScript>(out BasicAttackScript attackScript))
             {
-            
+
                 Debug.Log("Hit player with HitboxScript: " + attackScript.isPlayer1);
 
                 if (attackScript.isPlayer1)
@@ -159,41 +171,49 @@ public class TargetScript : MonoBehaviour
         if (triggerObject.gameObject.CompareTag("Hitbox"))
         {
             Debug.Log("targetscript hit by hitbox");
-            if (TryGetComponent<EnemyMovemnt>(out EnemyMovemnt enemyMovement))
+            if (targetType != 3 && TryGetComponent<EnemyMovemnt>(out EnemyMovemnt enemyMovement))
             {
-                enemyMovement.StartCoroutine(enemyMovement.DisableAgentRoutine());        
+                enemyMovement.StartCoroutine(enemyMovement.DisableAgentRoutine());
             }
             HitboxScript HS = triggerObject.GetComponent<HitboxScript>();
-            if(HS.hitboxTeam != targetTeam && inIFrames == false){
+            if (HS.hitboxTeam != targetTeam && inIFrames == false)
+            {
                 Debug.Log("Call knockback");
                 Vector2 knockbackDirection = (transform.position - triggerObject.transform.position).normalized;
                 isHitByAttack(HS.isPlayer1, HS.damageDealt, HS.kbStrength, knockbackDirection, HS.stunTimeDealt, HS.iFrameTimeDealt);
             }
-            if (HS.hitboxTeam != targetTeam && inIFrames == false && HS.deleteOnImpact == true){
-                if(triggerObject.transform.parent.gameObject != null)
+            if (HS.hitboxTeam != targetTeam && inIFrames == false && HS.deleteOnImpact == true)
+            {
+                if (triggerObject.transform.parent.gameObject != null)
                 {
                     Destroy(triggerObject.transform.parent.gameObject);
-                } else
+                }
+                else
                 {
                     Destroy(triggerObject.gameObject);
                 }
             }
-            
+
         }
         if (triggerObject.gameObject.CompareTag("WallTrigger") && triggerObject.gameObject.GetComponent<WallTriggerer>().hasSummoned == false && gameObject.CompareTag("Player"))
         {
             triggerObject.gameObject.GetComponent<WallTriggerer>().summonWall();
         }
     }
-    public async Task TempFlash(){
-        if(spriteFlashPlayer == false && flashing == false){
+    public async Task TempFlash()
+    {
+
+        if (spriteFlashPlayer == false && flashing == false)
+        {
             flashing = true;
             tempMatStore = gameObject.GetComponent<SpriteRenderer>().material;
             gameObject.GetComponent<SpriteRenderer>().material = flashMaterial;
             await Task.Delay(flashTime);
             gameObject.GetComponent<SpriteRenderer>().material = tempMatStore;
             flashing = false;
-        } else if(spriteFlashPlayer == true && flashing == false){
+        }
+        else if (spriteFlashPlayer == true && flashing == false)
+        {
             flashing = true;
             Debug.Log("spriteFlashPlayer True!!");
             GameObject theSkin = gameObject.GetComponent<PlayerControler>().theSkin;
