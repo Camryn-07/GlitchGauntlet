@@ -276,7 +276,7 @@ MonoBehaviour:
   hitboxTeam: 3
   damageDealt: 1
   stunTimeDealt: 0.3
-  iFrameTimeDealt: 0.3
+  iFrameTimeDealt: 1
   kbStrength: 10
   hitboxUptime: 10000000
   deleteOnImpact: 0
