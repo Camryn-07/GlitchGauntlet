@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyTilemapRainAttack2D : MonoBehaviour
 {
     public TargetScript TC;
+
     [Header("Attack Prefabs")]
     public GameObject ammo;
     public GameObject warningSign;
@@ -11,28 +13,39 @@ public class EnemyTilemapRainAttack2D : MonoBehaviour
     [Header("Timing Settings")]
     public float timeBetweenAttacks = 5f;
     public float attackDuration = 3f;
-    public float spawnInterval = 0.3f;
-    public float telegraphTime = 0.5f;
+    public float spawnInterval = 0.25f;
+    public float telegraphTime = 1f;
 
-    [Header("Tilemap Attack Zone")]
+    [Header("Circle Scatter Settings")]
     public float attackRadius = 5f;
-    public float fallHeight = 6f;
-    public float scanHeightOffset = 3f;
-
-    public float castRadius = 0.3f;
+    public bool checkForWalkableFloor = false;
     public LayerMask tilemapLayer;
+
+    private bool isAttacking = false;
+    private NavMeshAgent agent;
+    private EnemyMovemnt enemyMovement;
+
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        enemyMovement = GetComponent<EnemyMovemnt>();
+    }
 
     private void OnEnable()
     {
         TargetScript.startBossShooting += BossAttack;
-        
+    }
+
+    private void OnDisable()
+    {
+        TargetScript.startBossShooting -= BossAttack;
     }
 
     private void BossAttack()
     {
-        if (TC.healthValue <= 6)
+        if (TC.healthValue <= 6 && !isAttacking)
         {
-            Debug.Log("startit");
+            isAttacking = true;
             StartCoroutine(InfiniteAttackLoop());
         }
     }
@@ -41,58 +54,64 @@ public class EnemyTilemapRainAttack2D : MonoBehaviour
     {
         while (true)
         {
-            yield return StartCoroutine(SpawnObjectsRoutine());
+            yield return StartCoroutine(SpawnCircleScatterRoutine());
             yield return new WaitForSeconds(timeBetweenAttacks);
         }
     }
 
-    private IEnumerator SpawnObjectsRoutine()
+    private IEnumerator SpawnCircleScatterRoutine()
     {
+        SetBossMovement(false);
+
         float timer = 0f;
 
         while (timer < attackDuration)
         {
-            float randomXOffset = Random.Range(-attackRadius, attackRadius);
+            Vector2 randomCircleOffset = Random.insideUnitCircle * attackRadius;
+            Vector3 targetPos = transform.position + new Vector3(randomCircleOffset.x, randomCircleOffset.y, 0f);
 
-            Vector3 scanOrigin = new Vector3(
-                transform.position.x + randomXOffset,
-                transform.position.y + scanHeightOffset,
-                0f
-            );
-
-            RaycastHit2D tilemapHit = Physics2D.CircleCast(scanOrigin, castRadius, Vector2.down, 25f, tilemapLayer);
-
-            if (tilemapHit.collider != null)
+            if (!checkForWalkableFloor || Physics2D.OverlapCircle(targetPos, 0.2f, tilemapLayer) != null)
             {
-                Vector3 floorPosition = tilemapHit.point;
-                Vector3 highSpawnPosition = floorPosition + new Vector3(0f, fallHeight, 0f);
-
-                StartCoroutine(TelegraphAndDrop(floorPosition, highSpawnPosition));
+                StartCoroutine(TelegraphAndDrop(targetPos));
             }
 
             yield return new WaitForSeconds(spawnInterval);
             timer += spawnInterval;
         }
+
+        yield return new WaitForSeconds(telegraphTime);
+
+        SetBossMovement(true);
     }
-    private IEnumerator TelegraphAndDrop(Vector3 groundPos, Vector3 spawnPos)
+
+    private void SetBossMovement(bool canMove)
+    {
+        if (enemyMovement != null)
+        {
+            enemyMovement.enabled = canMove;
+        }
+
+        if (agent != null && agent.isOnNavMesh)
+        {
+            agent.isStopped = !canMove;
+            if (!canMove)
+            {
+                agent.ResetPath();
+            }
+        }
+    }
+
+    private IEnumerator TelegraphAndDrop(Vector3 groundPos)
     {
         GameObject warning = Instantiate(warningSign, groundPos, Quaternion.identity);
-        yield return new WaitForSeconds(1f);
-        Destroy(warning);
+        yield return new WaitForSeconds(telegraphTime);
+        if (warning != null) Destroy(warning);
         Instantiate(ammo, groundPos, Quaternion.identity);
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Vector3 leftBound = transform.position + Vector3.left * attackRadius;
-        Vector3 rightBound = transform.position + Vector3.right * attackRadius;
-
-        // Draw horizontal line representing the zone
-        Gizmos.DrawLine(leftBound, rightBound);
-
-        // Draw search boundary limits
-        Gizmos.DrawWireSphere(leftBound, castRadius);
-        Gizmos.DrawWireSphere(rightBound, castRadius);
+        Gizmos.DrawWireSphere(transform.position, attackRadius);
     }
 }

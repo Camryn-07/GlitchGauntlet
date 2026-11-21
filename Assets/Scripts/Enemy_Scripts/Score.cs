@@ -22,6 +22,10 @@ public class Score : MonoBehaviour
     public GameObject controlsP2;
     public GameObject quit;
     public GameObject resrart;
+    public Camera player1Camera;
+    public Camera player2Camera;
+    public Camera bossCamera;
+    private bool cutsceneTriggered = false;
 
     //public class
     void Awake()
@@ -30,6 +34,11 @@ public class Score : MonoBehaviour
     }
     void Start()
     {
+        if (bossCamera != null)
+        {
+            bossCamera.gameObject.SetActive(false);
+        }
+
         StartCoroutine(Timer());
         bossSpawn = false;
     }
@@ -41,13 +50,15 @@ public class Score : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdown -= 1f;
 
-            if (countdown == 30)
+            if (countdown == 30 && !cutsceneTriggered)
             {
+                cutsceneTriggered = true;
                 SpawnBoss();
+                yield return StartCoroutine(ShowBoss());
             }
             if (countdown == 0)
             {
-                Time.timeScale = 0;
+                Time.timeScale = 0f;
                 controlsP1.SetActive(false);
                 controlsP2.SetActive(false);
                 if (scoreP1 > scoreP2)
@@ -71,6 +82,20 @@ public class Score : MonoBehaviour
     {
         Instantiate(Boss, transform.position, transform.rotation);
         bossSpawn = true;
+    }
+    IEnumerator ShowBoss()
+    {
+        player1Camera.gameObject.SetActive(false);
+        player2Camera.gameObject.SetActive(false);
+        bossCamera.gameObject.SetActive(true);
+        Time.timeScale = 0f;
+
+        yield return new WaitForSecondsRealtime(1.5f);
+
+        Time.timeScale = 1f;
+        bossCamera.gameObject.SetActive(false);
+        player1Camera.gameObject.SetActive(true);
+        player2Camera.gameObject.SetActive(true);
     }
     void Update()
     {
