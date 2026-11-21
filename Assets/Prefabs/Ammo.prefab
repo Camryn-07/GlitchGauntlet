@@ -11,12 +11,10 @@ GameObject:
   - component: {fileID: 3963317508705014712}
   - component: {fileID: 1708964307152902466}
   - component: {fileID: 3376134057681066361}
-  - component: {fileID: 1058808225136588618}
   - component: {fileID: 1880599097639551330}
   - component: {fileID: 2499073116572668936}
   - component: {fileID: 1200171097313585559}
   - component: {fileID: -4674563786943020981}
-  - component: {fileID: 3951995704065940138}
   m_Layer: 0
   m_Name: Ammo
   m_TagString: Untagged
@@ -88,8 +86,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7534841496900001598, guid: 6142327b59791be41b5efd2d642ac1d3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 0.645283, g: 0.14001414, b: 0.14001414, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -118,42 +116,6 @@ MonoBehaviour:
   hitboxUptime: 10000000
   deleteOnImpact: 0
   isPlayer1: 0
---- !u!58 &1058808225136588618
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217118252937236647}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 1
 --- !u!60 &1880599097639551330
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -161,7 +123,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217118252937236647}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -192,7 +154,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 1.9444444}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -272,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85791b54a7e3ae94b8e42c84958381ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetScript
-  targetType: 0
   targetTeam: 3
   canTakeDamage: 0
   inIFrames: 0
@@ -285,31 +246,5 @@ MonoBehaviour:
   attack: {fileID: 8300000, guid: 46b4dc381d5b57249b7e7b3d5d079cb9, type: 3}
   scorePerHit: 0
   scoreOnDeath: 0
-  flashMaterial: {fileID: 0}
   scoreLost: -25
   flashTime: 0
-  spriteFlashPlayer: 0
-  deathParticles: {fileID: 0}
-  flashing: 0
---- !u!95 &3951995704065940138
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217118252937236647}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d00325af66640c54abf2e11c69499f97, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
