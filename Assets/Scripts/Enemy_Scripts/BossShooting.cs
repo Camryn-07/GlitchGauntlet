@@ -25,8 +25,6 @@ public class EnemyTilemapRainAttack2D : MonoBehaviour
     private NavMeshAgent agent;
     private EnemyMovemnt enemyMovement;
 
-    [serialize field]    
-
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
