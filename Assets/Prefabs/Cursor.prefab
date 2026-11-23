@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CursorScript
   moveData: {x: 0, y: 0}
   rb: {fileID: 5663905935430455496}
-  speed: 6
+  speed: 10
   buttonSelected: {fileID: 0}
 --- !u!50 &5663905935430455496
 Rigidbody2D:

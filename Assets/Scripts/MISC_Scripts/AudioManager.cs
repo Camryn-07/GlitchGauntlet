@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class AudioPersister : MonoBehaviour
 {
     public static AudioPersister instance;
+    public AudioSource audioSource;
 
     void Update()
     {
@@ -21,5 +22,16 @@ public class AudioPersister : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
+        
+    }
+    private void Awake()
+    {
+    int numMusicPlayers = FindObjectsByType<AudioPersister>(FindObjectsSortMode.None).Length;
+    if (numMusicPlayers != 1)
+    {
+    audioSource.Stop();
+    Destroy(this.gameObject);
+    }
     }
 }

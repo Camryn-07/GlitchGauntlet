@@ -208,6 +208,7 @@ MonoBehaviour:
   - {fileID: 0}
   speed: 4
   disableDuration: 0.3
+  animator: {fileID: 0}
 --- !u!195 &6711608661254217547
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -256,7 +257,8 @@ MonoBehaviour:
   scorePerHit: 0
   scoreOnDeath: 50
   flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
-  scoreLost: -25
+  baseMaterial: {fileID: 2100000, guid: 81b1ccc8a5a73024487d0c993da78b1c, type: 2}
+  scoreLost: -20
   flashTime: 500
   spriteFlashPlayer: 0
   deathParticles: {fileID: 7975765184272471805, guid: 342f5b858421f194eaf019d36d83b484, type: 3}
