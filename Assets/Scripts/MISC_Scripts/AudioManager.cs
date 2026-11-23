@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioPersister : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioPersister instance;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
