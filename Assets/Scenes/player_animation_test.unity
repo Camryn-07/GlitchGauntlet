@@ -268,6 +268,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniBoss (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7402294099192132423, guid: 58378ce364fa5434bbe608232b42ed7d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402294099192132423, guid: 58378ce364fa5434bbe608232b42ed7d, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7524473588552695988, guid: 58378ce364fa5434bbe608232b42ed7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.19
