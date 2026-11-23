@@ -365,6 +365,7 @@ MonoBehaviour:
   players: []
   speed: 1
   disableDuration: 0.3
+  animator: {fileID: 5286672847915486192}
 --- !u!195 &-2110219057814122727
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -411,6 +412,7 @@ MonoBehaviour:
   tilemapLayer:
     serializedVersion: 2
     m_Bits: 1
+  animator: {fileID: 5286672847915486192}
 --- !u!95 &5286672847915486192
 Animator:
   serializedVersion: 7
