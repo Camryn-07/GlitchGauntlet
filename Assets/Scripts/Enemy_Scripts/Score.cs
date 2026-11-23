@@ -25,6 +25,7 @@ public class Score : MonoBehaviour
     public Camera player1Camera;
     public Camera player2Camera;
     public Camera bossCamera;
+    public GameObject bossWall;
     private bool cutsceneTriggered = false;
 
     //public class
@@ -85,6 +86,7 @@ public class Score : MonoBehaviour
     }
     IEnumerator ShowBoss()
     {
+        bossWall.gameObject.SetActive(false);
         player1Camera.gameObject.SetActive(false);
         player2Camera.gameObject.SetActive(false);
         bossCamera.gameObject.SetActive(true);
