@@ -206,8 +206,8 @@ MonoBehaviour:
   iFramesTimer: 0
   myRb: {fileID: 1825561567024478892}
   attack: {fileID: 8300000, guid: b4da7990c8ca6ee4bad44863c650f950, type: 3}
-  scorePerHit: 50
-  scoreOnDeath: 450
+  scorePerHit: 25
+  scoreOnDeath: 225
   flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
   scoreLost: -100
   flashTime: 500
@@ -257,7 +257,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7376751030278011151}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
