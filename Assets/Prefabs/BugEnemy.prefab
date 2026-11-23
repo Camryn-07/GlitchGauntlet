@@ -216,7 +216,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6406451646149866708}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -226,7 +226,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1
+  m_Height: 2
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -254,9 +254,9 @@ MonoBehaviour:
   myRb: {fileID: 2938885373669875631}
   attack: {fileID: 8300000, guid: 46b4dc381d5b57249b7e7b3d5d079cb9, type: 3}
   scorePerHit: 0
-  scoreOnDeath: 100
+  scoreOnDeath: 50
   flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
-  scoreLost: -100
+  scoreLost: -25
   flashTime: 500
   spriteFlashPlayer: 0
   deathParticles: {fileID: 7975765184272471805, guid: 342f5b858421f194eaf019d36d83b484, type: 3}
