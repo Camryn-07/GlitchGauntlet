@@ -10,6 +10,9 @@ public class EnemyMovemnt : MonoBehaviour
     public TagHandle Player;
     public float disableDuration = 0.3f;   
     private bool isAgentDisabled = false;
+
+    [SerializeField] private Animator animator;
+
     void Start()
     {
         chaser = GetComponent<NavMeshAgent>();
@@ -27,6 +30,10 @@ public class EnemyMovemnt : MonoBehaviour
         {
             chaser.SetDestination(targetPlayer.transform.position);
             FlipSprite(targetPlayer.transform.position);
+            if (animator != null)
+            {
+                animator.SetTrigger("startHover");
+            }
         }
     }
 

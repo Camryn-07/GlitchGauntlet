@@ -25,6 +25,8 @@ public class EnemyTilemapRainAttack2D : MonoBehaviour
     private NavMeshAgent agent;
     private EnemyMovemnt enemyMovement;
 
+    [SerializeField] private Animator animator;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -54,7 +56,9 @@ public class EnemyTilemapRainAttack2D : MonoBehaviour
     {
         while (true)
         {
+            animator.SetBool("isShooting", true);
             yield return StartCoroutine(SpawnCircleScatterRoutine());
+            animator.SetBool("isShooting", false);
             yield return new WaitForSeconds(timeBetweenAttacks);
         }
     }
