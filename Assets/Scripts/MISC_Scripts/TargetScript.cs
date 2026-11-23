@@ -27,6 +27,7 @@ public class TargetScript : MonoBehaviour
     [SerializeField]
     private int scoreOnDeath = 100;
     [SerializeField] private Material flashMaterial;
+    [SerializeField] private Material baseMaterial;
     private Material tempMatStore;
     [SerializeField]
     private int scoreLost;
@@ -35,10 +36,22 @@ public class TargetScript : MonoBehaviour
     [SerializeField] private bool spriteFlashPlayer;
     [SerializeField] private GameObject deathParticles;
     [SerializeField] private bool flashing;
+    private GameObject theSkin;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (spriteFlashPlayer == false)
+        {
+            gameObject.GetComponent<SpriteRenderer>().material = baseMaterial;
+        }
+        else if (spriteFlashPlayer == true)
+        {
+            theSkin = gameObject.GetComponent<PlayerControler>().theSkin;
+            theSkin.GetComponent<SpriteRenderer>().material = baseMaterial;
+        }
+        
         myRb = GetComponent<Rigidbody2D>();
         healthValue = maxHealthValue;
     }
@@ -216,7 +229,7 @@ public class TargetScript : MonoBehaviour
         {
             flashing = true;
             Debug.Log("spriteFlashPlayer True!!");
-            GameObject theSkin = gameObject.GetComponent<PlayerControler>().theSkin;
+            theSkin = gameObject.GetComponent<PlayerControler>().theSkin;
             tempMatStore = theSkin.GetComponent<SpriteRenderer>().material;
             theSkin.GetComponent<SpriteRenderer>().material = flashMaterial;
             await Task.Delay(flashTime);

@@ -3242,7 +3242,7 @@ PrefabInstance:
       objectReference: {fileID: 276968396}
     - target: {fileID: 4908695141997031351, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
       propertyPath: countdown
-      value: 35
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4908695141997031351, guid: 5a8bce89da6e29c438336114a42ace6d, type: 3}
       propertyPath: bossCamera
@@ -141911,7 +141911,7 @@ PrefabInstance:
     - target: {fileID: 6701154961830082236, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 81b1ccc8a5a73024487d0c993da78b1c, type: 2}
     - target: {fileID: 6995159537970469598, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -143025,7 +143025,7 @@ PrefabInstance:
     - target: {fileID: 6701154961830082236, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2100000, guid: 81b1ccc8a5a73024487d0c993da78b1c, type: 2}
     - target: {fileID: 7531824590205836986, guid: 3b75f9cab6843c348826dd4d19b2f689, type: 3}
       propertyPath: projLevelUpText
       value: 

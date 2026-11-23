@@ -667,9 +667,12 @@ MonoBehaviour:
   scorePerHit: 0
   scoreOnDeath: 0
   flashMaterial: {fileID: 2100000, guid: b7c623ba1176b3449b119977061414ad, type: 2}
+  baseMaterial: {fileID: 2100000, guid: 81b1ccc8a5a73024487d0c993da78b1c, type: 2}
+  scoreLost: 0
   flashTime: 500
   spriteFlashPlayer: 0
   deathParticles: {fileID: 7975765184272471805, guid: 342f5b858421f194eaf019d36d83b484, type: 3}
+  flashing: 0
 --- !u!114 &7975114136054503538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,6 +739,7 @@ MonoBehaviour:
   dashInactiveIcon: {fileID: 0}
   dashTrailsObj: {fileID: 1915114744407417533}
   animator: {fileID: 0}
+  dashLevelUpText: {fileID: 0}
 --- !u!114 &7531824590205836986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,6 +758,7 @@ MonoBehaviour:
   projPowerMult: 0.3
   projPowerBase: 1
   shootAbilityIcon: {fileID: 0}
+  projLevelUpText: {fileID: 0}
   projPower: 0
 --- !u!95 &1674900626353399552
 Animator:
