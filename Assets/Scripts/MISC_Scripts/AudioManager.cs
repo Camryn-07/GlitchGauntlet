@@ -1,16 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class AudioManager : MonoBehaviour
+public class AudioPersister : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public static AudioPersister instance;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (SceneManager.GetActiveScene().name == "Startmenu")
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (SceneManager.GetActiveScene().name == "HowToPlay")
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
