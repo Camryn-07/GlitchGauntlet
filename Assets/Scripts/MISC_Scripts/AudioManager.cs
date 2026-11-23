@@ -1,14 +1,18 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioPersister : MonoBehaviour
 {
     public static AudioPersister instance;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Update()
     {
-        if (instance == null)
-      //if (SceneManager.GetActiveScene().name == "Startmenu") || (SceneManager.GetActiveScene().name == "HowToPlay")
+        if (SceneManager.GetActiveScene().name == "Startmenu")
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (SceneManager.GetActiveScene().name == "HowToPlay")
         {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
@@ -17,11 +21,5 @@ public class AudioPersister : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
